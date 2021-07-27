@@ -1,6 +1,6 @@
 import 'package:authentication_repository/authentication_repository.dart';
 import 'package:flutter/material.dart';
-import 'package:phygitalz_project_1/models/circular_data.dart';
+import 'package:phygitalz_project_1/Circular/models/circular_data.dart';
 
 import 'package:provider/provider.dart';
 import 'package:user_repository/user_repository.dart';
