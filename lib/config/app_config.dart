@@ -38,7 +38,7 @@ class AppConfig {
 // import 'responsive_screen/app_config.dart';
 // ...
 // class RandomWordsState extends State<RandomWords> {
-//   AppConfig _ac;
+//   AppConfig _app_config;
 //   ...
 //   @override
 //   Widget build(BuildContext context) {
@@ -46,7 +46,7 @@ class AppConfig {
 //     ...
 //     return Scaffold(
 //     body: Container(
-//     height: _ac.rHP(50),
+//     height: _app_config.rHP(50),
 //     width: _ac.rWP(50),
 //     color: Colors.red,
 //     child: Text('Test'),
