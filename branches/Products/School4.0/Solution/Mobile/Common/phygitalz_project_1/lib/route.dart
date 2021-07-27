@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:phygitalz_project_1/views/screens/circular_screen.dart';
-import 'package:phygitalz_project_1/views/screens/create_accout_screen.dart';
-import 'package:phygitalz_project_1/views/screens/login_screen.dart';
-import 'package:phygitalz_project_1/views/screens/signup_screen.dart';
-import 'package:phygitalz_project_1/views/screens/splas_screen.dart';
-import 'package:phygitalz_project_1/views/screens/timetable_screen.dart';
+
+
+import 'Auth/screens/create_accout_screen.dart';
+import 'Auth/screens/login_screen.dart';
+import 'Auth/screens/signup_screen.dart';
+import 'Circular/screens/circular_screen.dart';
+import 'Common/screens/splas_screen.dart';
+import 'Timetable/screens/timetable_screen.dart';
 
 class RouteGenerator {
   static Route<dynamic> generateRoute(RouteSettings settings) {
