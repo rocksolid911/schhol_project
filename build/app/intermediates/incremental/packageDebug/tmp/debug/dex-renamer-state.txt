@@ -1,4 +1,4 @@
-#Tue Jun 29 00:19:28 IST 2021
-base.0=/Users/rocksolid/Documents/app_dev/phygitalz_project_1/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
+#Mon Aug 09 18:36:34 IST 2021
+base.0=/Users/rocksolid/Documents/GitHub/schhol_project/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
 renamed.0=classes.dex
 path.0=classes.dex

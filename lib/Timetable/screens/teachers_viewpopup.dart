@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:phygitalz_project_1/config/app_config.dart';
+
 
 import "package:hexcolor/hexcolor.dart";
+import 'package:phygitalz_project_1/config/app_config.dart';
 
 //why use main here?
 

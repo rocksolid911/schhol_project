@@ -3,12 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:phygitalz_project_1/Auth/models/User.dart';
 import 'package:phygitalz_project_1/Auth/models/Userprovider.dart';
 import 'package:phygitalz_project_1/Auth/models/auth.dart';
-import 'package:phygitalz_project_1/Auth/models/user_preferences.dart';
 import 'package:phygitalz_project_1/Auth/screens/login_screen.dart';
 import 'package:phygitalz_project_1/Common/widgets/bottomnav.dart';
 import 'package:phygitalz_project_1/Common/widgets/drawer.dart';
-import 'package:phygitalz_project_1/Home/Widgets/HSSBody.dart';
-import 'package:phygitalz_project_1/config/app_config.dart';
+
 import 'package:provider/provider.dart';
 
 class HomeScreenStudent extends StatefulWidget {

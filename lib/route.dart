@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:phygitalz_project_1/Home/Screens/Home_screen.dart';
-import 'package:phygitalz_project_1/Timetable/screens/teachers_viewpopup.dart';
+
 
 
 import 'Auth/screens/create_accout_screen.dart';
@@ -8,6 +7,8 @@ import 'Auth/screens/login_screen.dart';
 import 'Auth/screens/signup_screen.dart';
 import 'Circular/screens/circular_screen.dart';
 import 'Common/screens/splas_screen.dart';
+import 'Home/Screens/Home_screen.dart';
+import 'Timetable/screens/teachers_viewpopup.dart';
 import 'Timetable/screens/timetable_screen.dart';
 
 class RouteGenerator {

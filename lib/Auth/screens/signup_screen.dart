@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-
 import 'package:phygitalz_project_1/config/app_config.dart';
+
+
 
 
 class SignUp extends StatefulWidget {

@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:phygitalz_project_1/Auth/models/auth.dart';
 import 'package:phygitalz_project_1/Auth/models/User.dart';
 import 'package:phygitalz_project_1/Auth/models/Userprovider.dart';
-//import 'package:phygitalz_project_1/Auth/models/auth.dart';
+import 'package:phygitalz_project_1/Auth/models/auth.dart';
 import 'package:phygitalz_project_1/Auth/widgets/textfield_decoration.dart';
 import 'package:phygitalz_project_1/Auth/widgets/validator.dart';
-import 'package:phygitalz_project_1/Common/widgets/login_textfield.dart';
-import 'package:flushbar/flushbar.dart';
 import 'package:phygitalz_project_1/config/app_config.dart';
+
 import 'package:provider/provider.dart';
 
 class LogIn extends StatefulWidget {

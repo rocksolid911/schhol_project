@@ -28,12 +28,12 @@ class UserPreferences {
     //Future.delayed(const Duration(milliseconds: 200), (){});
     final SharedPreferences prefs = await SharedPreferences.getInstance();
 
-    int userId = prefs.getInt("user_id");
+    int userId = prefs.getInt("user_Id");
     print(userId);
     String name = prefs.getString("name");
-    dynamic method = prefs.getString("method");
+    String method = prefs.getString("method");
     String msg = prefs.getString("msg");
-    String emailId = prefs.getString("email_id");
+    String emailId = prefs.getString("email_Id");
 
     return User(
       emailId:emailId,
