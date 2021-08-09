@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:phygitalz_project_1/Home/Screens/Home_screen.dart';
+import 'package:phygitalz_project_1/Timetable/screens/teachers_viewpopup.dart';
 
 
 import 'Auth/screens/create_accout_screen.dart';
@@ -34,9 +36,21 @@ class RouteGenerator {
         return MaterialPageRoute(
           builder: (_) => CircularView (),
         );
-      case '/timetable':
+      case '/timetable_student':
         return MaterialPageRoute(
           builder: (_) => TimeTableScreen (),
+        );
+      case '/timetable_teacher':
+        return MaterialPageRoute(
+          builder: (_) => TimeTableScreen (),
+        );
+      case '/teacherpop':
+        return MaterialPageRoute(
+          builder: (_) => ViewPopUp (),
+        );
+      case '/HssScreen':
+        return MaterialPageRoute(
+          builder: (_) => HomeScreenStudent (),
         );
         // If args is not of the correct type, return an error page.
         // You can also throw an exception while in development.

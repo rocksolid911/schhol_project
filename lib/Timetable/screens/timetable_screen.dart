@@ -6,8 +6,6 @@ import 'package:phygitalz_project_1/config/app_config.dart';
 import 'package:table_calendar/table_calendar.dart';
 
 class TimeTableScreen extends StatefulWidget {
-  const TimeTableScreen({Key key}) : super(key: key);
-
   @override
   _TimeTableScreenState createState() => _TimeTableScreenState();
 }
@@ -31,6 +29,7 @@ class _TimeTableScreenState extends State<TimeTableScreen> {
             children: [
               Container(
                 width: MediaQuery.of(context).size.width,
+                //TODO make it responsive
                 height: 230,
                 decoration: BoxDecoration(
                   image: DecorationImage(
@@ -73,17 +72,25 @@ class _TimeTableScreenState extends State<TimeTableScreen> {
                       lastDay: DateTime(2030),
                       calendarFormat: format,
                       calendarStyle: CalendarStyle(
-                        todayDecoration: BoxDecoration(color: Colors.orange,shape: BoxShape.circle),
-                       outsideTextStyle: TextStyle(color: Colors.white),
+                        todayDecoration: BoxDecoration(
+                            color: Colors.orange, shape: BoxShape.circle),
+                        outsideTextStyle: TextStyle(color: Colors.white),
                         //rangeHighlightColor : const Color(4290502143),
                         //outsideTextStyle : const TextStyle(color: const Color(4289638062)),
                       ),
                       headerStyle: HeaderStyle(
                         titleCentered: true,
                         formatButtonVisible: false,
-                        titleTextStyle: TextStyle(color: Colors.white,fontSize: 18),
-                        leftChevronIcon: Icon(Icons.chevron_left,color: Colors.white,),
-                        rightChevronIcon: Icon(Icons.chevron_right,color: Colors.white,),
+                        titleTextStyle:
+                            TextStyle(color: Colors.white, fontSize: 18),
+                        leftChevronIcon: Icon(
+                          Icons.chevron_left,
+                          color: Colors.white,
+                        ),
+                        rightChevronIcon: Icon(
+                          Icons.chevron_right,
+                          color: Colors.white,
+                        ),
                       ),
                       daysOfWeekStyle: DaysOfWeekStyle(
                         weekdayStyle: TextStyle(color: Colors.white),
@@ -101,84 +108,149 @@ class _TimeTableScreenState extends State<TimeTableScreen> {
                   ],
                 ),
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(top: 50, left: 35),
-                    child: Column(
-                      children: [
-                        Container(
-                          width: 50,
-                          height: 50,
-                          decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: HexColor("#f55f5f")),
-                          child: Icon(
-                            Icons.format_list_bulleted_sharp,
-                            color: Colors.white,
-                          ),
-                        ),
-                        Text("Maths",
-                            style: TextStyle(
-                                fontSize: 10, fontWeight: FontWeight.bold)),
-                        Container(
-                            height: 80,
-                            child: VerticalDivider(
-                                thickness: 1,
-                                indent: 6,
-                                endIndent: 6,
-                                color: Colors.black26)),
-                        Container(
-                          width: 50,
-                          height: 50,
-                          decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: HexColor("#188c60")),
-                          child: Icon(
-                            Icons.panorama_horizontal_select,
-                            color: Colors.white,
-                          ),
-                        ),
-                        Text("Physics",
-                            style: TextStyle(
-                                fontSize: 10, fontWeight: FontWeight.bold)),
-                        Container(
-                            height: 80,
-                            child: VerticalDivider(
-                                thickness: 1,
-                                indent: 6,
-                                endIndent: 6,
-                                color: Colors.black26)),
-                        Container(
-                          width: 50,
-                          height: 50,
-                          decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: HexColor("#faa107")),
-                          child: Icon(
-                            Icons.checkroom_sharp,
-                            color: Colors.white,
-                          ),
-                        ),
-                        Text("Chemistry",
-                            style: TextStyle(
-                                fontSize: 10, fontWeight: FontWeight.bold)),
-                      ],
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 25),
-                    child: Container(
-                      height: 450,
-                      width: 220,
-                      child: ListView.builder(
-                          shrinkWrap: true,
-                          itemCount: 5,
-                          itemBuilder: (builder, context) {
-                            return Container(
-                                child: Column(
+              Padding(
+                padding: const EdgeInsets.only(left: 25),
+                child: Container(
+                  height: _appConfig.rH(56.3),
+                  width: MediaQuery.of(context).size.width,
+                  child: ListView.builder(
+                      shrinkWrap: true,
+                      itemCount: 1,
+                      itemBuilder: (builder, context) {
+                        return Container(
+                            child: Row(
+                          children: [
+                            Container(
+                              child: Column(
+                                // mainAxisAlignment = MainAxisAlignment.start,
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsets.only(
+                                        top: _appConfig.rHP(8), bottom: 0),
+                                    child: Container(
+                                      //changed height of container
+                                      width: _appConfig.rW(14),
+                                      height: _appConfig.rH(8),
+                                      decoration: BoxDecoration(
+                                          shape: BoxShape.circle,
+                                          color: HexColor("#f55f5f")),
+                                      child: Icon(
+                                        Icons.format_list_bulleted_sharp,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                  ),
+                                  Text("Maths",
+                                      style: TextStyle(
+                                          fontSize: 10,
+                                          fontWeight: FontWeight.bold)),
+                                  Container(
+                                    height: _appConfig.rH(8),
+                                    child: VerticalDivider(
+                                        thickness: 1,
+                                        indent: 6,
+                                        endIndent: 6,
+                                        color: Colors.black26),
+                                  ),
+                                  // Container(
+                                  //   width: _appConfig.rW(14),
+                                  //   height: _appConfig.rH(8),
+                                  //   decoration: BoxDecoration(
+                                  //       shape: BoxShape.circle,
+                                  //       color: HexColor("#188c60")),
+                                  //   child: Icon(
+                                  //     Icons.panorama_horizontal_select,
+                                  //     color: Colors.white,
+                                  //   ),
+                                  // ),
+                                  // Text("Physics",
+                                  //     style: TextStyle(
+                                  //         fontSize: 10,
+                                  //         fontWeight: FontWeight.bold)),
+                                  Padding(
+                                    padding:
+                                        EdgeInsets.only(top: _appConfig.rHP(4)),
+                                    child: Container(
+                                      width: _appConfig.rW(15),
+                                      height: _appConfig.rH(10),
+                                      child: Column(
+                                        children: [
+                                          Container(
+                                            width: _appConfig.rW(14),
+                                            height: _appConfig.rH(6.4),
+                                            decoration: BoxDecoration(
+                                                shape: BoxShape.circle,
+                                                color: HexColor("#188c60")),
+                                            child: Icon(
+                                              Icons.panorama_horizontal_select,
+                                              color: Colors.white,
+                                            ),
+                                          ),
+                                          Text("Physics",
+                                              style: TextStyle(
+                                                  fontSize: 10,
+                                                  fontWeight: FontWeight.bold)),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                  Container(
+                                      height: _appConfig.rH(8),
+                                      child: VerticalDivider(
+                                          thickness: 1,
+                                          indent: 6,
+                                          endIndent: 6,
+                                          color: Colors.black26)),
+                                  // Container(
+                                  //   width: _appConfig.rW(14),
+                                  //   height: _appConfig.rH(8),
+                                  //   decoration: BoxDecoration(
+                                  //       shape: BoxShape.circle,
+                                  //       color: HexColor("#faa107")),
+                                  //   child: Icon(
+                                  //     Icons.checkroom_sharp,
+                                  //     color: Colors.white,
+                                  //   ),
+                                  // ),
+                                  // Text("Chemistry",
+                                  //     style: TextStyle(
+                                  //         fontSize: 10, fontWeight: FontWeight.bold)),
+                                  //putiing above 2 widgets into a container
+                                  Padding(
+                                    padding: EdgeInsets.only(
+                                        bottom: _appConfig.rHP(6),
+                                        top: _appConfig.rHP(4)),
+                                    child: Container(
+                                      width: _appConfig.rW(15),
+                                      height: _appConfig.rH(10),
+                                      child: Column(
+                                        children: [
+                                          Container(
+                                            width: _appConfig.rW(14),
+                                            height: _appConfig.rH(6.4),
+                                            decoration: BoxDecoration(
+                                                shape: BoxShape.circle,
+                                                color: HexColor("#faa107")),
+                                            child: Icon(
+                                              Icons.checkroom_sharp,
+                                              color: Colors.white,
+                                            ),
+                                          ),
+                                          Text("Chemistry",
+                                              style: TextStyle(
+                                                  fontSize: 10,
+                                                  fontWeight: FontWeight.bold)),
+                                        ],
+                                      ),
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ),
+                            SizedBox(
+                              width: _appConfig.rW(5),
+                            ),
+                            Column(
                               children: [
                                 CustomPaint(
                                   foregroundPainter: one(),
@@ -190,14 +262,14 @@ class _TimeTableScreenState extends State<TimeTableScreen> {
                                             topRight: Radius.circular(10),
                                             bottomRight: Radius.circular(10))),
                                     child: Container(
-                                      height: 140,
-                                      width: 220,
+                                      height: _appConfig.rH(19),
+                                      width: _appConfig.rW(61.5),
                                       child: Column(
                                         children: [
                                           Padding(
-                                            padding: const EdgeInsets.only(
-                                              top: 12,
-                                              right: 82,
+                                            padding: EdgeInsets.only(
+                                              top: _appConfig.rHP(2),
+                                              right: _appConfig.rWP(25),
                                             ),
                                             child: Text(
                                               "10.30AM-11.15AM",
@@ -207,17 +279,18 @@ class _TimeTableScreenState extends State<TimeTableScreen> {
                                             ),
                                           ),
                                           Padding(
-                                            padding: const EdgeInsets.only(
-                                                left: 12, right: 12, top: 3),
+                                            padding: EdgeInsets.only(
+                                                right: _appConfig.rWP(3.2),
+                                                left: _appConfig.rWP(3.2),
+                                                top: _appConfig.rHP(0.5)),
                                             child: Divider(
                                               thickness: 1,
                                             ),
                                           ),
                                           Padding(
-                                            padding: const EdgeInsets.only(
-                                              top: 3,
-                                              left: 10,
-                                            ),
+                                            padding: EdgeInsets.only(
+                                                top: _appConfig.rHP(0.5),
+                                                left: _appConfig.rWP(3)),
                                             child: Table(
                                               children: [
                                                 TableRow(children: [
@@ -232,7 +305,9 @@ class _TimeTableScreenState extends State<TimeTableScreen> {
                                                             color: HexColor(
                                                                 "#707782")),
                                                       ),
-                                                      SizedBox(width: 35),
+                                                      SizedBox(
+                                                          width: _appConfig
+                                                              .rWP(9.5)),
                                                       Text(
                                                         "Lisa",
                                                         style: TextStyle(
@@ -245,9 +320,9 @@ class _TimeTableScreenState extends State<TimeTableScreen> {
                                                 ]),
                                                 TableRow(children: [
                                                   Padding(
-                                                    padding:
-                                                        const EdgeInsets.only(
-                                                            top: 4),
+                                                    padding: EdgeInsets.only(
+                                                      top: _appConfig.rHP(0.5),
+                                                    ),
                                                     child: Row(
                                                       children: [
                                                         Text(
@@ -260,7 +335,10 @@ class _TimeTableScreenState extends State<TimeTableScreen> {
                                                               color: HexColor(
                                                                   "#707782")),
                                                         ),
-                                                        SizedBox(width: 35),
+                                                        SizedBox(
+                                                          width: _appConfig
+                                                              .rWP(10),
+                                                        ),
                                                         Text(
                                                           "43",
                                                           style: TextStyle(
@@ -276,9 +354,10 @@ class _TimeTableScreenState extends State<TimeTableScreen> {
                                                 TableRow(
                                                   children: [
                                                     Padding(
-                                                      padding:
-                                                          const EdgeInsets.only(
-                                                              top: 4),
+                                                      padding: EdgeInsets.only(
+                                                        top:
+                                                            _appConfig.rHP(0.4),
+                                                      ),
                                                       child: Row(
                                                         children: [
                                                           Text(
@@ -372,8 +451,8 @@ class _TimeTableScreenState extends State<TimeTableScreen> {
                                             topRight: Radius.circular(10),
                                             bottomRight: Radius.circular(10))),
                                     child: Container(
-                                      height: 139,
-                                      width: 220,
+                                      height: _appConfig.rH(19),
+                                      width: _appConfig.rW(61.5),
                                       child: Column(
                                         children: [
                                           Padding(
@@ -547,8 +626,8 @@ class _TimeTableScreenState extends State<TimeTableScreen> {
                                             topRight: Radius.circular(10),
                                             bottomRight: Radius.circular(10))),
                                     child: Container(
-                                      height: 139,
-                                      width: 220,
+                                      height: _appConfig.rH(19),
+                                      width: _appConfig.rW(61.5),
                                       child: Column(
                                         children: [
                                           Padding(
@@ -710,11 +789,11 @@ class _TimeTableScreenState extends State<TimeTableScreen> {
                                   ),
                                 ),
                               ],
-                            ));
-                          }),
-                    ),
-                  )
-                ],
+                            ),
+                          ],
+                        ));
+                      }),
+                ),
               ),
             ],
           ),

@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:phygitalz_project_1/Auth/models/auth.dart';
+import 'package:phygitalz_project_1/Auth/models/User.dart';
+import 'package:phygitalz_project_1/Auth/models/Userprovider.dart';
+//import 'package:phygitalz_project_1/Auth/models/auth.dart';
+import 'package:phygitalz_project_1/Auth/widgets/textfield_decoration.dart';
+import 'package:phygitalz_project_1/Auth/widgets/validator.dart';
 import 'package:phygitalz_project_1/Common/widgets/login_textfield.dart';
-
+import 'package:flushbar/flushbar.dart';
 import 'package:phygitalz_project_1/config/app_config.dart';
-
+import 'package:provider/provider.dart';
 
 class LogIn extends StatefulWidget {
   const LogIn({Key key}) : super(key: key);
@@ -15,16 +21,59 @@ class LogIn extends StatefulWidget {
 class _LogInState extends State<LogIn> {
   AppConfig _appConfig;
   bool val = false;
-  bool  _enableBtn = false;
-  bool _enableBtn2 = false;
-  GlobalKey<FormState> _form = GlobalKey<FormState>();
-  GlobalKey<FormState> _form2 = GlobalKey<FormState>();
+  //bool _enableBtn = false;
+  //bool _enableBtn2 = false;
+  String _username, _password;
+  GlobalKey<FormState> formKey = GlobalKey<FormState>();
   List<Color> _colors = [Color(0xFFEF681F), Color(0xFF752FD9)];
   List<double> _stops = [0.0, 0.7];
+
   //set enableBtn(bool value) => setState(() => _enableBtn = value);
 
   @override
   Widget build(BuildContext context) {
+    AuthProvider auth = Provider.of<AuthProvider>(context);
+   // var map = context.read<AuthProvider>();
+
+    var loading = Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        CircularProgressIndicator(),
+        Text(" Authenticating ... Please wait")
+      ],
+    );
+    var doLogin = () {
+      //var formKey;
+      final form = formKey.currentState;
+
+      if (form.validate()) {
+        form.save();
+        final Future<Map<String, dynamic>> successfulMessage =
+        auth.login(_username, _password);
+
+
+        successfulMessage.then((response) {
+          if (response['status']) {
+            User user = response['user'];
+            print(user);
+            Provider.of<UserProvider>(context, listen: false).setUser(user);
+            Navigator.pushReplacementNamed(context, '/HssScreen');
+          } else if (response['status']==false){
+            // Flushbar(
+            //   title: "Failed Login",
+            //   message: response['message']['message'].toString(),
+            //   duration: Duration(seconds: 3),
+            // ).show(context);
+            //TODO implement non assigned email id page
+            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>LogIn()));
+          }
+        });
+      } else {
+        print("form is invalid");
+      }
+    };
+
+
     _appConfig = AppConfig(context);
     return SafeArea(
       child: Scaffold(
@@ -82,211 +131,104 @@ class _LogInState extends State<LogIn> {
                     constraints: BoxConstraints(
                         maxWidth: _appConfig.rW(100),
                         maxHeight: _appConfig.rH(55)),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(left: 15.0, right: 15),
-                          child: CustomTextField(
-                            formtype: 'email',
-                            lebeltextemail: 'Email',
-                            icon: Icons.email,
-                            key: _form,
-                            emailvalid: (value){
-                             setState(() {
-                               _enableBtn = value;
-                               //_enableBtn=false;
-                              // print(_enableBtn);
-                             }
-
-                             );
-                            },
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(
-                              left: 15.0, right: 15, top: 20),
-                          child: CustomTextField(
-                            formtype: 'passwd',
-                            labeltextpasswd: 'Password',
-                            icon: Icons.password_outlined,
-                            key: _form2,
-                            passwdvalid: (value){setState(() {
-                              _enableBtn2=value;
-                            });},
-
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 20.0, top: 15),
-                          child: Row(
-                            children: [
-                              Container(
-                                height: 28,
-                                width: 28,
-                                decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  color:
-                                      val ? Colors.white : Colors.transparent,
-                                  border: Border.all(
-                                    color: val ? Colors.white : Colors.white,
-                                    style: BorderStyle.solid,
-                                    width: 2
-                                  ),
-                                ),
-                                child: IconButton(
-                                  padding: EdgeInsets.all(2.5),
-                                  onPressed: () {
-                                    setState(() {
-                                      val = !val;
-                                    });
-                                  },
-                                  icon: Icon(
-                                    Icons.check,
-                                    size: 20,
-                                  ),
-                                  color:
-                                      val ? Colors.black : Colors.transparent,
-                                  //constraints: BoxConstraints(maxWidth: 10,maxHeight: 10),
-                                ),
-                              ),
-                              SizedBox(
-                                width: 10,
-                              ),
-                              Text(
-                                "save password",
-                                style: TextStyle(color: Colors.white),
-                              ),
-                              SizedBox(
-                                width: 40,
-                              ),
-                              GestureDetector(
-                                child: Text(
-                                  "Forgot password ?",
-                                  style: TextStyle(color: Colors.white),
-                                ),
-                                onTap: () {
-                                  Navigator.pushNamed(context, '/forgotpasswd');
-                                },
-                              ),
-                            ],
-                          ),
-                        ),
-                        SizedBox(
-                          height: _appConfig.rH(4),
-                        ),
-                        Container(
-                          height: _appConfig.rH(6),
-                          width: _appConfig.rW(40),
-                          child: ElevatedButton(
-                            // onPressed: () {
-                            //    Navigator.pushNamed(context, '/createacc');
-                            //
-                            // },
-                            onPressed: _enableBtn&&_enableBtn2?()=>Navigator.pushNamed(context, '/circular'):null,
-                           // onPressed: _form.currentState.validate()?() =>  Navigator.pushNamed(context, '/createacc'):null,
-                            child: Text(
-                              "Log In",
-                              style: TextStyle(
-                                  color: Colors.pinkAccent,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 20),
-                            ),
-                            style: ButtonStyle(
-                              shape: MaterialStateProperty.all<
-                                  RoundedRectangleBorder>(
-                                RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(30.0),
-                                  // side: BorderSide(color: Colors.red)
-                                ),
-                              ),
-                              backgroundColor: _enableBtn&&_enableBtn2?MaterialStateProperty.all<Color>(
-                                  Colors.white):MaterialStateProperty.all<Color>(
-                                  Colors.grey),
+                    child: Form(
+                      key: formKey,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(left: 15, right: 15),
+                            child: TextFormField(
+                              autofocus: false,
+                              autovalidateMode: AutovalidateMode.onUserInteraction,
+                              validator: validateEmail,
+                              onSaved: (value) => _username = value,
+                              decoration: buildInputDecoration(
+                                  "Confirm Email", Icons.email,"email"),
                             ),
                           ),
-                        ),
-                        SizedBox(
-                          height: _appConfig.rH(2),
-                        ),
-                        Container(
-                          height: _appConfig.rH(6),
-                          width: _appConfig.rW(60),
-                          child: ElevatedButton(
-                            // onPressed: () {
-                            //    Navigator.pushNamed(context, '/createacc');
-                            //
-                            // },
-                            onPressed: ()=>Navigator.pushNamed(context, '/createacc'),
-                            // onPressed: _form.currentState.validate()?() =>  Navigator.pushNamed(context, '/createacc'):null,
-                            child: Text(
-                              "Create Account",
-                              style: TextStyle(
-                                  color: Colors.pinkAccent,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 20),
-                            ),
-                            style: ButtonStyle(
-                              shape: MaterialStateProperty.all<
-                                  RoundedRectangleBorder>(
-                                RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(30.0),
-                                  // side: BorderSide(color: Colors.red)
-                                ),
-                              ),
-                              backgroundColor: MaterialStateProperty.all<Color>(
-                                  Colors.white),
+                          Padding(
+                            padding: const EdgeInsets.only(
+                                left: 15.0, right: 15, top: 20),
+                            child: TextFormField(
+                              autofocus: false,
+                              obscureText: true,
+                              validator: (value) => value.isEmpty
+                                  ? "Please enter password"
+                                  : null,
+                              onSaved: (value) => _password = value,
+                              decoration: buildInputDecoration(
+                                  "Confirm password", Icons.lock,"password"),
                             ),
                           ),
-                        ),
-                        SizedBox(
-                          height: _appConfig.rH(2),
-                        ),
-                        Container(
-                          height: _appConfig.rH(6),
-                          width: _appConfig.rW(80),
-                          child: ElevatedButton(
-                            onPressed: () {
-                              Navigator.pushNamed(context, '/createacc');
-                            },
+                          Padding(
+                            padding: const EdgeInsets.only(left: 20.0, top: 15),
                             child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                Padding(
-                                  padding: const EdgeInsets.only(right: 8.0),
-                                  child: Container(
-                                      constraints: BoxConstraints(maxHeight: _appConfig.rH(10),maxWidth: _appConfig.rW(10)),
-                                      child: Image(image: AssetImage('assets/images/google_logo.png'),)
+                                Container(
+                                  height: 28,
+                                  width: 28,
+                                  decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    color:
+                                        val ? Colors.white : Colors.transparent,
+                                    border: Border.all(
+                                        color:
+                                            val ? Colors.white : Colors.white,
+                                        style: BorderStyle.solid,
+                                        width: 2),
                                   ),
+                                  child: IconButton(
+                                    padding: EdgeInsets.all(2.5),
+                                    onPressed: () {
+                                      setState(() {
+                                        val = !val;
+                                      });
+                                    },
+                                    icon: Icon(
+                                      Icons.check,
+                                      size: 20,
+                                    ),
+                                    color:
+                                        val ? Colors.black : Colors.transparent,
+                                    //constraints: BoxConstraints(maxWidth: 10,maxHeight: 10),
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: 10,
                                 ),
                                 Text(
-                                  "Continiue with Google",
-                                  style: TextStyle(
-                                      color: Colors.pinkAccent,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 18),
+                                  "save password",
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                                SizedBox(
+                                  width: 40,
+                                ),
+                                GestureDetector(
+                                  child: Text(
+                                    "Forgot password ?",
+                                    style: TextStyle(color: Colors.white),
+                                  ),
+                                  onTap: () {
+                                    Navigator.pushNamed(
+                                        context, '/forgotpasswd');
+                                  },
                                 ),
                               ],
                             ),
-                            style: ButtonStyle(
-                              shape: MaterialStateProperty.all<
-                                  RoundedRectangleBorder>(
-                                RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(30.0),
-                                  // side: BorderSide(color: Colors.red)
-                                ),
-                              ),
-                              backgroundColor:
-                              MaterialStateProperty.all<Color>(
-                                  Colors.white),
-                            ),
                           ),
-                        ),
-                      ],
+                          SizedBox(
+                            height: _appConfig.rH(8),
+                          ),
+                          auth.loggedInStatus==Status.NotLoggedIn
+                              ? longButtons("Login", doLogin)
+                              : loading,
+                        ],
+                      ),
                     ),
                   ),
-                  top: _appConfig.rH(40),
+                  top: _appConfig.rH(50),
                 ),
               ],
             ),

@@ -15,52 +15,61 @@ class myDrawer extends StatelessWidget {
           Icons.home,
           color: Colors.pinkAccent,
         ),
-        title: Text('TimeTable'),
+        title: Text('Home'),
         onTap: () {
-          Navigator.pushNamed(context, '/timetable');
+          Navigator.pop(context);
+          Navigator.pushNamed(context, '/HssScreen');
+        },
+      ),
+      ListTile(
+        leading: Icon(
+          Icons.access_time,
+          color: Colors.pinkAccent,
+        ),
+        title: Text('TimeTable_student'),
+        onTap: () {
+          Navigator.pop(context);
+          Navigator.pushNamed(context, '/timetable_student');
           //Navigator.pop(context);
         },
       ),
       ListTile(
         leading: Icon(
-          Icons.home,
+          Icons.access_time,
           color: Colors.pinkAccent,
         ),
-        title: Text('Home'),
+        title: Text('TimeTable_Teacher'),
         onTap: () {
           Navigator.pop(context);
+          Navigator.pushNamed(context, '/timetable_teacher');
+
         },
       ),
       ListTile(
         leading: Icon(
-          Icons.home,
+          Icons.access_time,
           color: Colors.pinkAccent,
         ),
-        title: Text('Home'),
+        title: Text('TimeTable_viewpopup'),
         onTap: () {
           Navigator.pop(context);
+          Navigator.pushNamed(context, '/teacherpop');
+
         },
       ),
       ListTile(
         leading: Icon(
-          Icons.home,
+          Icons.blur_circular,
           color: Colors.pinkAccent,
         ),
-        title: Text('Home'),
+        title: Text('Circular'),
         onTap: () {
           Navigator.pop(context);
+          Navigator.pushNamed(context, '/circular');
         },
       ),
-      ListTile(
-        leading: Icon(
-          Icons.home,
-          color: Colors.pinkAccent,
-        ),
-        title: Text('Home'),
-        onTap: () {
-          Navigator.pop(context);
-        },
-      ),
+
+
       ListTile(
         leading: Icon(
           Icons.home,

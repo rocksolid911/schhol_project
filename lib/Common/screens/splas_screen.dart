@@ -3,26 +3,28 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:phygitalz_project_1/Auth/models/User.dart';
+import 'package:phygitalz_project_1/Auth/models/Userprovider.dart';
+import 'package:phygitalz_project_1/Auth/models/user_preferences.dart';
 import 'package:phygitalz_project_1/Auth/screens/login_screen.dart';
 
-
 import 'package:phygitalz_project_1/config/app_config.dart';
+import 'package:provider/provider.dart';
 
+class SplashScreen extends StatelessWidget {
+  final User user;
+  SplashScreen({Key key, this.user,   }) : super(key: key);
 
-class SplashScreen extends StatefulWidget {
-  const SplashScreen({Key key}) : super(key: key);
+   AppConfig _appConfig;
+
 
   @override
-  _SplashScreenState createState() => _SplashScreenState();
-}
-
-class _SplashScreenState extends State<SplashScreen> {
-  AppConfig _appConfig;
-  @override
-  void initState() {
-    super.initState();
+  Widget build(BuildContext context) {
+     Provider.of<UserProvider>(context).setUser(user);
+     //print(user.emailId);
+    _appConfig = AppConfig(context);
     Timer(
-      Duration(seconds: 5),
+      Duration(seconds: 2),
       () => Navigator.pushReplacement(
         context,
         MaterialPageRoute(
@@ -30,11 +32,6 @@ class _SplashScreenState extends State<SplashScreen> {
         ),
       ),
     );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    _appConfig = AppConfig(context);
     return Scaffold(
       body: SafeArea(
         child: Stack(
