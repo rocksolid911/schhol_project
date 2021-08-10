@@ -12,7 +12,10 @@ class TimeTableScreen extends StatefulWidget {
 }
 
 class _TimeTableScreenState extends State<TimeTableScreen> {
+  DateTime _selectedDay;
+  DateTime _focusedDay = DateTime.now();
   AppConfig _appConfig;
+  bool select;
   final GlobalKey<ScaffoldState> _drawerkey = GlobalKey();
   CalendarFormat format = CalendarFormat.week;
   @override
@@ -28,98 +31,18 @@ class _TimeTableScreenState extends State<TimeTableScreen> {
           height: MediaQuery.of(context).size.height,
           child: Column(
             children: [
-              Container(
-                width: MediaQuery.of(context).size.width,
-                //TODO make it responsive
-                height: 230,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                      image: AssetImage("assets/images/3.jpg"),
-                      fit: BoxFit.fill),
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Row(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: GestureDetector(
-                            child: Icon(
-                              Icons.sort,
-                              color: Colors.white,
-                            ),
-                            onTap: () {
-                              _drawerkey.currentState.openDrawer();
-                            },
-                          ),
-                        ),
-                        SizedBox(
-                          width: _appConfig.rW(25),
-                        ),
-                        Text(
-                          "Time Table",
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 16,
-                              fontWeight: FontWeight.bold),
-                        ),
-                      ],
-                    ),
-                    TableCalendar(
-                      focusedDay: DateTime.now(),
-                      firstDay: DateTime(2010),
-                      lastDay: DateTime(2030),
-                      calendarFormat: format,
-                      calendarStyle: CalendarStyle(
-                        todayDecoration: BoxDecoration(
-                            color: Colors.orange, shape: BoxShape.circle),
-                        outsideTextStyle: TextStyle(color: Colors.white),
-                        //rangeHighlightColor : const Color(4290502143),
-                        //outsideTextStyle : const TextStyle(color: const Color(4289638062)),
-                      ),
-                      headerStyle: HeaderStyle(
-                        titleCentered: true,
-                        formatButtonVisible: false,
-                        titleTextStyle:
-                            TextStyle(color: Colors.white, fontSize: 18),
-                        leftChevronIcon: Icon(
-                          Icons.chevron_left,
-                          color: Colors.white,
-                        ),
-                        rightChevronIcon: Icon(
-                          Icons.chevron_right,
-                          color: Colors.white,
-                        ),
-                      ),
-                      daysOfWeekStyle: DaysOfWeekStyle(
-                        weekdayStyle: TextStyle(color: Colors.white),
-                        weekendStyle: TextStyle(color: Colors.white),
-                        //decoration: BoxDecoration(color: Colors.white),
-                      ),
-                      // rowHeight: 56,
-                      onFormatChanged: (CalendarFormat _format) {
-                        format = _format;
-                      },
-                    ),
-                    GestureDetector(
-                      child: Icon(Icons.keyboard_arrow_down_rounded),
-                    )
-                  ],
-                ),
-              ),
+              calendarView(context),
               Padding(
                 padding: const EdgeInsets.only(left: 25),
                 child: Container(
                   height: _appConfig.rH(56.3),
                   width: MediaQuery.of(context).size.width,
                   child: ListView.builder(
-                      shrinkWrap: true,
-                      itemCount: 1,
-                      itemBuilder: (builder, context) {
-                        return Container(
-                            child: Row(
+                    shrinkWrap: true,
+                    itemCount: 1,
+                    itemBuilder: (builder, context) {
+                      return Container(
+                        child: Row(
                           children: [
                             Container(
                               child: Column(
@@ -153,21 +76,6 @@ class _TimeTableScreenState extends State<TimeTableScreen> {
                                         endIndent: 6,
                                         color: Colors.black26),
                                   ),
-                                  // Container(
-                                  //   width: _appConfig.rW(14),
-                                  //   height: _appConfig.rH(8),
-                                  //   decoration: BoxDecoration(
-                                  //       shape: BoxShape.circle,
-                                  //       color: HexColor("#188c60")),
-                                  //   child: Icon(
-                                  //     Icons.panorama_horizontal_select,
-                                  //     color: Colors.white,
-                                  //   ),
-                                  // ),
-                                  // Text("Physics",
-                                  //     style: TextStyle(
-                                  //         fontSize: 10,
-                                  //         fontWeight: FontWeight.bold)),
                                   Padding(
                                     padding:
                                         EdgeInsets.only(top: _appConfig.rHP(4)),
@@ -202,21 +110,6 @@ class _TimeTableScreenState extends State<TimeTableScreen> {
                                           indent: 6,
                                           endIndent: 6,
                                           color: Colors.black26)),
-                                  // Container(
-                                  //   width: _appConfig.rW(14),
-                                  //   height: _appConfig.rH(8),
-                                  //   decoration: BoxDecoration(
-                                  //       shape: BoxShape.circle,
-                                  //       color: HexColor("#faa107")),
-                                  //   child: Icon(
-                                  //     Icons.checkroom_sharp,
-                                  //     color: Colors.white,
-                                  //   ),
-                                  // ),
-                                  // Text("Chemistry",
-                                  //     style: TextStyle(
-                                  //         fontSize: 10, fontWeight: FontWeight.bold)),
-                                  //putiing above 2 widgets into a container
                                   Padding(
                                     padding: EdgeInsets.only(
                                         bottom: _appConfig.rHP(6),
@@ -254,7 +147,7 @@ class _TimeTableScreenState extends State<TimeTableScreen> {
                             Column(
                               children: [
                                 CustomPaint(
-                                  foregroundPainter: one(),
+                                  foregroundPainter: One(),
                                   child: Card(
                                     elevation: 3,
                                     shape: RoundedRectangleBorder(
@@ -443,7 +336,7 @@ class _TimeTableScreenState extends State<TimeTableScreen> {
                                   height: 6,
                                 ),
                                 CustomPaint(
-                                  foregroundPainter: two(),
+                                  foregroundPainter: Two(),
                                   child: Card(
                                     elevation: 3,
                                     shape: RoundedRectangleBorder(
@@ -618,7 +511,7 @@ class _TimeTableScreenState extends State<TimeTableScreen> {
                                   height: 6,
                                 ),
                                 CustomPaint(
-                                  foregroundPainter: three(),
+                                  foregroundPainter: Three(),
                                   child: Card(
                                     elevation: 3,
                                     shape: RoundedRectangleBorder(
@@ -792,8 +685,10 @@ class _TimeTableScreenState extends State<TimeTableScreen> {
                               ],
                             ),
                           ],
-                        ));
-                      }),
+                        ),
+                      );
+                    },
+                  ),
                 ),
               ),
             ],
@@ -802,9 +697,110 @@ class _TimeTableScreenState extends State<TimeTableScreen> {
       ),
     );
   }
+
+  Container calendarView(BuildContext context) {
+    return Container(
+      width: MediaQuery.of(context).size.width,
+      //TODO make it responsive
+      height: 230,
+      decoration: BoxDecoration(
+        image: DecorationImage(
+            image: AssetImage("assets/images/3.jpg"), fit: BoxFit.fill),
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Row(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: GestureDetector(
+                  child: Icon(
+                    Icons.sort,
+                    color: Colors.white,
+                  ),
+                  onTap: () {
+                    _drawerkey.currentState.openDrawer();
+                  },
+                ),
+              ),
+              SizedBox(
+                width: _appConfig.rW(25),
+              ),
+              Text(
+                "Time Table",
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold),
+              ),
+            ],
+          ),
+          TableCalendar(
+            selectedDayPredicate: (day) {
+              return isSameDay(_selectedDay, day);
+            },
+            onDaySelected: (selectedDay, focusedDay) {
+              if (!isSameDay(_selectedDay, selectedDay)) {
+                // Call `setState()` when updating the selected day
+                setState(() {
+                  _selectedDay = selectedDay;
+                  _focusedDay = focusedDay;
+                });
+              }
+            },
+            focusedDay: _focusedDay,
+            firstDay: DateTime(2010),
+            lastDay: DateTime(2030),
+            calendarFormat: format,
+            calendarStyle: CalendarStyle(
+              selectedDecoration:
+                  BoxDecoration(color: Colors.orange, shape: BoxShape.circle),
+              todayDecoration:
+                  BoxDecoration(color: Colors.orange, shape: BoxShape.circle),
+              outsideTextStyle: TextStyle(color: Colors.white),
+              defaultTextStyle: TextStyle(color: Colors.white),
+              // defaultDecoration: BoxDecoration(
+              //   color: _selectedDay==_focusedDay?Colors.orange:Colors.white,
+              // ),
+              //rangeHighlightColor : const Color(4290502143),
+              //outsideTextStyle : const TextStyle(color: const Color(4289638062)),
+            ),
+            headerStyle: HeaderStyle(
+              titleCentered: true,
+              formatButtonVisible: false,
+              titleTextStyle: TextStyle(color: Colors.white, fontSize: 18),
+              leftChevronIcon: Icon(
+                Icons.chevron_left,
+                color: Colors.white,
+              ),
+              rightChevronIcon: Icon(
+                Icons.chevron_right,
+                color: Colors.white,
+              ),
+            ),
+            daysOfWeekStyle: DaysOfWeekStyle(
+              weekdayStyle: TextStyle(color: Colors.white),
+              weekendStyle: TextStyle(color: Colors.white),
+              //decoration: BoxDecoration(color: Colors.white),
+            ),
+            // rowHeight: 56,
+            onFormatChanged: (CalendarFormat _format) {
+              format = _format;
+            },
+          ),
+          GestureDetector(
+            child: Icon(Icons.keyboard_arrow_down_rounded),
+            onTap: () {},
+          )
+        ],
+      ),
+    );
+  }
 }
 
-class one extends CustomPainter {
+class One extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final paint = Paint()
@@ -819,7 +815,7 @@ class one extends CustomPainter {
   bool shouldRepaint(CustomPainter oldDelegate) => false;
 }
 
-class two extends CustomPainter {
+class Two extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final paint = Paint()
@@ -834,7 +830,7 @@ class two extends CustomPainter {
   bool shouldRepaint(CustomPainter oldDelegate) => false;
 }
 
-class three extends CustomPainter {
+class Three extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final paint = Paint()

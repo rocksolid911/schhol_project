@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:phygitalz_project_1/Timetable/screens/cordinator2.dart';
 
 
 
@@ -52,6 +53,10 @@ class RouteGenerator {
       case '/HssScreen':
         return MaterialPageRoute(
           builder: (_) => HomeScreenStudent (),
+        );
+      case '/HssCoord':
+        return MaterialPageRoute(
+          builder: (_) => Coordinator2 (),
         );
         // If args is not of the correct type, return an error page.
         // You can also throw an exception while in development.

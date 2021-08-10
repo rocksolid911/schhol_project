@@ -73,12 +73,13 @@ class myDrawer extends StatelessWidget {
 
       ListTile(
         leading: Icon(
-          Icons.home,
+          Icons.account_box_outlined,
           color: Colors.pinkAccent,
         ),
-        title: Text('Home'),
+        title: Text('coordinator'),
         onTap: () {
           Navigator.pop(context);
+          Navigator.pushNamed(context, '/HssCoord');
         },
       ),
       ListTile(
