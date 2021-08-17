@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.phygitalz_project_1"
+    package="com.example.schhol_project"
     android:versionCode="1"
     android:versionName="1.0.0" >
 
@@ -17,9 +17,9 @@
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:debuggable="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="phygitalz_project_1" >
+        android:label="schhol_project" >
         <activity
-            android:name="com.example.phygitalz_project_1.MainActivity"
+            android:name="com.example.schhol_project.MainActivity"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
             android:hardwareAccelerated="true"
             android:launchMode="singleTop"

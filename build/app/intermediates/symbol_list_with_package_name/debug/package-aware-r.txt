@@ -1,4 +1,4 @@
-com.example.phygitalz_project_1
+com.example.schhol_project
 attr alpha
 attr buttonSize
 attr circleCrop

@@ -5,6 +5,9 @@ import 'package:phygitalz_project_1/Auth/models/Userprovider.dart';
 import 'package:phygitalz_project_1/Auth/models/auth.dart';
 import 'package:phygitalz_project_1/Auth/widgets/textfield_decoration.dart';
 import 'package:phygitalz_project_1/Auth/widgets/validator.dart';
+import 'package:phygitalz_project_1/Timetable/Student_Timetable/models/timetable.dart';
+import 'package:phygitalz_project_1/Timetable/Student_Timetable/models/timetable_provider.dart';
+import 'package:phygitalz_project_1/Timetable/Student_Timetable/models/timetable_student.dart';
 import 'package:phygitalz_project_1/config/app_config.dart';
 
 import 'package:provider/provider.dart';
@@ -31,6 +34,7 @@ class _LogInState extends State<LogIn> {
   @override
   Widget build(BuildContext context) {
     AuthProvider auth = Provider.of<AuthProvider>(context);
+    //TimetableProvider timetableProvider = Provider.of<TimetableProvider>(context);
    // var map = context.read<AuthProvider>();
 
     var loading = Row(
@@ -55,6 +59,8 @@ class _LogInState extends State<LogIn> {
             User user = response['user'];
             print(user);
             Provider.of<UserProvider>(context, listen: false).setUser(user);
+            //TimetableStudent timetable;
+
             Navigator.pushReplacementNamed(context, '/HssScreen');
           } else if (response['status']==false){
             // Flushbar(

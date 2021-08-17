@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:phygitalz_project_1/Timetable/Student_Timetable/models/timetable.dart';
+import 'package:phygitalz_project_1/Timetable/Student_Timetable/models/timetable_provider.dart';
 import 'package:phygitalz_project_1/config/app_config.dart';
+import 'package:provider/provider.dart';
 
 class myDrawer extends StatelessWidget {
   AppConfig _appConfig;
@@ -9,6 +12,7 @@ class myDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    TimetableProvider timetableProvider = Provider.of<TimetableProvider>(context);
     _appConfig = AppConfig(context);
     List<ListTile> _listdata = <ListTile>[
       ListTile(
@@ -28,7 +32,10 @@ class myDrawer extends StatelessWidget {
           color: Colors.pinkAccent,
         ),
         title: Text('TimeTable_student'),
-        onTap: () {
+        onTap: () async {
+           List timetable = await timetableProvider.T_table(14, 24,DateTime.parse("2021-07-12"));
+
+          Provider.of<TimeTable>(context,listen: false).setTable(timetable);
           Navigator.pop(context);
           Navigator.pushNamed(context, '/timetable_student');
           //Navigator.pop(context);

@@ -10,6 +10,8 @@ import 'Auth/models/user_preferences.dart';
 import 'Auth/screens/login_screen.dart';
 import 'Circular/models/circular_data.dart';
 import 'Common/screens/splas_screen.dart';
+import 'Timetable/Student_Timetable/models/timetable.dart';
+import 'Timetable/Student_Timetable/models/timetable_provider.dart';
 import 'route.dart';
 
 void main()  => runApp(
@@ -38,6 +40,12 @@ class _MyAppState extends State<MyApp> {
         ),
         ChangeNotifierProvider(
           create: (context) => UserProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => TimetableProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => TimeTable(),
         ),
       ],
       child: MaterialApp(

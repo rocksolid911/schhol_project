@@ -1,6 +1,6 @@
 1<?xml version="1.0" encoding="utf-8"?>
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-3    package="com.example.phygitalz_project_1"
+3    package="com.example.schhol_project"
 4    android:versionCode="1"
 5    android:versionName="1.0.0" >
 6
@@ -22,11 +22,11 @@
 18        android:debuggable="true"
 19        android:icon="@mipmap/ic_launcher"
 19-->/Users/rocksolid/Documents/GitHub/schhol_project/android/app/src/main/AndroidManifest.xml:5:9-43
-20        android:label="phygitalz_project_1" >
-20-->/Users/rocksolid/Documents/GitHub/schhol_project/android/app/src/main/AndroidManifest.xml:4:9-44
+20        android:label="schhol_project" >
+20-->/Users/rocksolid/Documents/GitHub/schhol_project/android/app/src/main/AndroidManifest.xml:4:9-39
 21        <activity
 21-->/Users/rocksolid/Documents/GitHub/schhol_project/android/app/src/main/AndroidManifest.xml:6:9-34:20
-22            android:name="com.example.phygitalz_project_1.MainActivity"
+22            android:name="com.example.schhol_project.MainActivity"
 22-->/Users/rocksolid/Documents/GitHub/schhol_project/android/app/src/main/AndroidManifest.xml:7:13-41
 23            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
 23-->/Users/rocksolid/Documents/GitHub/schhol_project/android/app/src/main/AndroidManifest.xml:10:13-163

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:phygitalz_project_1/Timetable/screens/cordinator2.dart';
+
 
 
 
@@ -9,8 +9,11 @@ import 'Auth/screens/signup_screen.dart';
 import 'Circular/screens/circular_screen.dart';
 import 'Common/screens/splas_screen.dart';
 import 'Home/Screens/Home_screen.dart';
-import 'Timetable/screens/teachers_viewpopup.dart';
-import 'Timetable/screens/timetable_screen.dart';
+import 'Timetable/Coordinator_Timetable/screens/cordinator2.dart';
+import 'Timetable/Student_Timetable/screens/PAS_S40_Student_1_TimeTable.dart';
+
+import 'Timetable/Taecher_Timetable/screens/teachers_viewpopup.dart';
+
 
 class RouteGenerator {
   static Route<dynamic> generateRoute(RouteSettings settings) {
