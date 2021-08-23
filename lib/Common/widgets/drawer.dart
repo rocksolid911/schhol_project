@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:phygitalz_project_1/Timetable/Student_Timetable/models/timetable.dart';
-import 'package:phygitalz_project_1/Timetable/Student_Timetable/models/timetable_provider.dart';
+import 'package:phygitalz_project_1/Timetable/Student_Timetable/providers/timetable_set_provider.dart';
+import 'package:phygitalz_project_1/Timetable/Student_Timetable/providers/timetable_provider.dart';
 import 'package:phygitalz_project_1/config/app_config.dart';
 import 'package:provider/provider.dart';
 
@@ -32,6 +32,8 @@ class myDrawer extends StatelessWidget {
           color: Colors.pinkAccent,
         ),
         title: Text('TimeTable_student'),
+        //with out async got the error future<dynamic> is not a subtype of list<dynamic>
+        //bcoz it need to be async in order to complete request
         onTap: () async {
            List timetable = await timetableProvider.T_table(14, 24,DateTime.parse("2021-07-12"));
 
@@ -91,12 +93,13 @@ class myDrawer extends StatelessWidget {
       ),
       ListTile(
         leading: Icon(
-          Icons.home,
+          Icons.inventory_outlined,
           color: Colors.pinkAccent,
         ),
-        title: Text('Home'),
+        title: Text('Assignment'),
         onTap: () {
           Navigator.pop(context);
+          Navigator.pushNamed(context, '/assignment_student');
         },
       ),
       ListTile(

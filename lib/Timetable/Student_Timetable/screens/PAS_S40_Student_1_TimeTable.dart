@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:phygitalz_project_1/Common/widgets/bottomnav.dart';
 import 'package:phygitalz_project_1/Common/widgets/drawer.dart';
-import 'package:phygitalz_project_1/Timetable/Student_Timetable/models/timetable.dart';
+import 'package:phygitalz_project_1/Timetable/Student_Timetable/providers/timetable_set_provider.dart';
 import 'package:phygitalz_project_1/Timetable/Student_Timetable/models/timetable_student.dart';
 import 'package:phygitalz_project_1/Timetable/Student_Timetable/widgets/Timetable_card.dart';
 import 'package:phygitalz_project_1/Timetable/Student_Timetable/widgets/Timetable_subject_Icon_coloumn.dart';
@@ -52,23 +52,25 @@ class _TimeTableScreenState extends State<TimeTableScreen> {
                 child: Container(
                   height: _appConfig.rH(56.3),
                   width: MediaQuery.of(context).size.width,
-                  // child: ListView.builder(
-                  //   shrinkWrap: true,
-                  //   itemCount: timetableStudent.length,
-                  //   itemBuilder: (builder, context) {
-                  //     return Row(
-                  //       children: [
-                  //         TimeTbleIcon(),
-                  //
-                  //         SizedBox(
-                  //           width: _appConfig.rW(5),
-                  //         ),
-                  //         TimetableCard(),
-                  //       ],
-                  //     );
-                  //   },
-                  // ),
-                  child: Center(child: Text(timetableStudent.length.toString()),),
+                  child: timetableStudent.length==null?Center(child: Text("something went wrong\nerror:${timetableStudent.length} "),):ListView.builder(
+                    shrinkWrap: true,
+                    itemCount: timetableStudent.length,
+                    itemBuilder: (builder, context) {
+                      return Row(
+                        children: [
+                          //TODO assign timetable values
+                          TimeTbleIcon(),
+
+                          SizedBox(
+                            width: _appConfig.rW(5),
+                          ),
+                          //TODO assign timetable values
+                          TimetableCard(),
+                        ],
+                      );
+                    },
+                  ),
+                 // child: Center(child: Text(timetableStudent.length.toString()),),
                 ),
               ),
             ],

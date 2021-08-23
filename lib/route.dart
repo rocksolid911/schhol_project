@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:phygitalz_project_1/Timetable/Taecher_Timetable/screens/PAS_S40_Teacher_1_TimeTable.dart';
+import 'package:phygitalz_project_1/Timetable/Taecher_Timetable/screens/menu_PopUp_Selftask.dart';
+import 'package:phygitalz_project_1/Timetable/Taecher_Timetable/screens/menupopup_updatemeetinglink.dart';
 
 
 
 
+import 'Assignment/Assignment_student/screens/assignment_student_submitted.dart';
 import 'Auth/screens/create_accout_screen.dart';
 import 'Auth/screens/login_screen.dart';
 import 'Auth/screens/signup_screen.dart';
@@ -47,7 +51,7 @@ class RouteGenerator {
         );
       case '/timetable_teacher':
         return MaterialPageRoute(
-          builder: (_) => TimeTableScreen (),
+          builder: (_) => TimetableTeacherScreen (),
         );
       case '/teacherpop':
         return MaterialPageRoute(
@@ -57,9 +61,18 @@ class RouteGenerator {
         return MaterialPageRoute(
           builder: (_) => HomeScreenStudent (),
         );
-      case '/HssCoord':
+
+      case '/meetlink':
         return MaterialPageRoute(
-          builder: (_) => Coordinator2 (),
+          builder: (_) => UpdateMeetingLink (),
+        );
+      case '/activity':
+        return MaterialPageRoute(
+          builder: (_) => MenuPopupSelfTask (),
+        );
+      case '/assignment_student':
+        return MaterialPageRoute(
+          builder: (_) => StudentAssignment(),
         );
         // If args is not of the correct type, return an error page.
         // You can also throw an exception while in development.

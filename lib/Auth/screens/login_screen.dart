@@ -5,8 +5,8 @@ import 'package:phygitalz_project_1/Auth/models/Userprovider.dart';
 import 'package:phygitalz_project_1/Auth/models/auth.dart';
 import 'package:phygitalz_project_1/Auth/widgets/textfield_decoration.dart';
 import 'package:phygitalz_project_1/Auth/widgets/validator.dart';
-import 'package:phygitalz_project_1/Timetable/Student_Timetable/models/timetable.dart';
-import 'package:phygitalz_project_1/Timetable/Student_Timetable/models/timetable_provider.dart';
+import 'package:phygitalz_project_1/Timetable/Student_Timetable/providers/timetable_set_provider.dart';
+import 'package:phygitalz_project_1/Timetable/Student_Timetable/providers/timetable_provider.dart';
 import 'package:phygitalz_project_1/Timetable/Student_Timetable/models/timetable_student.dart';
 import 'package:phygitalz_project_1/config/app_config.dart';
 
