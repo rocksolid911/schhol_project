@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="20784d48-ebd7-4cfb-9b19-d8442e860424" name="Default Changelist" comment="timetable response from api..looks good.&#10;not implemented yet">
+    <list default="true" id="20784d48-ebd7-4cfb-9b19-d8442e860424" name="Default Changelist" comment="&gt;teacher time table design&#10;&gt;service created for teacher time table">
       <change afterPath="$PROJECT_DIR$/lib/Timetable/Taecher_Timetable/models/teacher_meetinglink.dart" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/lib/Timetable/Taecher_Timetable/models/timetable_teacher.dart" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/lib/Timetable/Taecher_Timetable/providers/teacher_meetinglink_provider.dart" afterDir="false" />
@@ -117,7 +117,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629228668707</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="&gt;teacher time table design&#10;&gt;service created for teacher time table">
+      <created>1629707286939</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1629707286939</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -135,6 +142,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="timetable response from api..looks good.&#10;not implemented yet" />
-    <option name="LAST_COMMIT_MESSAGE" value="timetable response from api..looks good.&#10;not implemented yet" />
+    <MESSAGE value="&gt;teacher time table design&#10;&gt;service created for teacher time table" />
+    <option name="LAST_COMMIT_MESSAGE" value="&gt;teacher time table design&#10;&gt;service created for teacher time table" />
   </component>
 </project>
