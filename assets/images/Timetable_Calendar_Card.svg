@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="375" height="223" viewBox="0 0 375 223">
+  <defs>
+    <linearGradient id="linear-gradient" y1="1.082" x2="1.017" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fa5435"/>
+      <stop offset="0.509" stop-color="#b617a4"/>
+      <stop offset="1" stop-color="#7717b0"/>
+    </linearGradient>
+  </defs>
+  <path id="Timetable_Calendar_Card" d="M-5213-1895h375v193a30,30,0,0,1-30,30h-315a30,30,0,0,1-30-30Z" transform="translate(5213 1895)" fill="url(#linear-gradient)"/>
+</svg>

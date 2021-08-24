@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:phygitalz_project_1/Assignment/Assignment_teacher/screens/assignment_teacher_draft.dart';
 import 'package:phygitalz_project_1/Timetable/Taecher_Timetable/screens/PAS_S40_Teacher_1_TimeTable.dart';
 import 'package:phygitalz_project_1/Timetable/Taecher_Timetable/screens/menu_PopUp_Selftask.dart';
 import 'package:phygitalz_project_1/Timetable/Taecher_Timetable/screens/menupopup_updatemeetinglink.dart';
@@ -73,6 +74,10 @@ class RouteGenerator {
       case '/assignment_student':
         return MaterialPageRoute(
           builder: (_) => StudentAssignment(),
+        );
+      case '/assignment_teacher':
+        return MaterialPageRoute(
+          builder: (_) => AssignmentTeacher(),
         );
         // If args is not of the correct type, return an error page.
         // You can also throw an exception while in development.

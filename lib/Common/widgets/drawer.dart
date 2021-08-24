@@ -104,12 +104,13 @@ class myDrawer extends StatelessWidget {
       ),
       ListTile(
         leading: Icon(
-          Icons.home,
+          Icons.more,
           color: Colors.pinkAccent,
         ),
         title: Text('Home'),
         onTap: () {
           Navigator.pop(context);
+          Navigator.pushNamed(context, "/assignment_teacher");
         },
       ),
       ListTile(

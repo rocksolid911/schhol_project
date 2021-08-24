@@ -69,6 +69,7 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
+    - assets/images/
     - assets/images/Phygitalz_P_Symbol.svg
     - assets/images/Phygitalz_Logo.svg
     - assets/images/google_logo.png
@@ -79,6 +80,9 @@ flutter:
     - assets/images/Assessment.svg
     - assets/images/Timetable.svg
     - assets/images/3.jpg
+    - assets/images/Subject_Icon_Maths.svg
+    - assets/images/Timetable_Calendar_Card.svg
+    - assets/images/profile_img.jpeg
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
