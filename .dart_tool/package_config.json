@@ -266,6 +266,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "gradientbutton",
+      "rootUri": "../packages/gradientbutton",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "graphs",
       "rootUri": "file:///Users/rocksolid/Documents/app_dev/flutter/.pub-cache/hosted/pub.dartlang.org/graphs-0.2.0",
       "packageUri": "lib/",
@@ -650,7 +656,7 @@
       "languageVersion": "2.10"
     }
   ],
-  "generated": "2021-08-24T19:56:03.179846Z",
+  "generated": "2021-08-27T14:03:38.115571Z",
   "generator": "pub",
   "generatorVersion": "2.13.0"
 }
