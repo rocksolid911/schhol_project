@@ -57,18 +57,6 @@ class myDrawer extends StatelessWidget {
       ),
       ListTile(
         leading: Icon(
-          Icons.access_time,
-          color: Colors.pinkAccent,
-        ),
-        title: Text('TimeTable_viewpopup'),
-        onTap: () {
-          Navigator.pop(context);
-          Navigator.pushNamed(context, '/teacherpop');
-
-        },
-      ),
-      ListTile(
-        leading: Icon(
           Icons.blur_circular,
           color: Colors.pinkAccent,
         ),
@@ -96,7 +84,7 @@ class myDrawer extends StatelessWidget {
           Icons.inventory_outlined,
           color: Colors.pinkAccent,
         ),
-        title: Text('Assignment'),
+        title: Text('Assignment_Teacher'),
         onTap: () {
           Navigator.pop(context);
           Navigator.pushNamed(context, '/assignment_student');
@@ -107,7 +95,7 @@ class myDrawer extends StatelessWidget {
           Icons.more,
           color: Colors.pinkAccent,
         ),
-        title: Text('Home'),
+        title: Text('Assignment_Student'),
         onTap: () {
           Navigator.pop(context);
           Navigator.pushNamed(context, "/assignment_teacher");

@@ -9,6 +9,9 @@
       <excludeFolder url="file://$MODULE_DIR$/android/app/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/android/app/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/android/app/build" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/gradientbutton/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/gradientbutton/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/gradientbutton/build" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Dart SDK" level="project" />

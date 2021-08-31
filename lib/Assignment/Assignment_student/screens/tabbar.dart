@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:phygitalz_project_1/Common/widgets/bottomnav.dart';
 import 'package:phygitalz_project_1/config/app_config.dart';
 
-import 'assignment_student_submitted.dart';
+import '../../Assignment_teacher/screens/assignment_teacher_main.dart';
 
 import "package:hexcolor/hexcolor.dart";
 
@@ -125,10 +125,10 @@ class _TabBarrState extends State<TabBarr> {
               ),
               Expanded(
                 child: TabBarView(children: [
-                  StudentAssignment(),
-                  StudentAssignment(),
-                  StudentAssignment(),
-                  StudentAssignment(),
+                  AssignmentTeacherMain(),
+                  AssignmentTeacherMain(),
+                  AssignmentTeacherMain(),
+                  AssignmentTeacherMain(),
                 ]),
               )
             ],

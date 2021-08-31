@@ -8,7 +8,7 @@ import 'package:phygitalz_project_1/Timetable/Taecher_Timetable/screens/menupopu
 
 
 
-import 'Assignment/Assignment_student/screens/assignment_student_submitted.dart';
+import 'Assignment/Assignment_teacher/screens/assignment_teacher_main.dart';
 import 'Auth/screens/create_accout_screen.dart';
 import 'Auth/screens/login_screen.dart';
 import 'Auth/screens/signup_screen.dart';
@@ -74,7 +74,7 @@ class RouteGenerator {
         );
       case '/assignment_student':
         return MaterialPageRoute(
-          builder: (_) => StudentAssignment(),
+          builder: (_) => AssignmentTeacherMain(),
         );
       case '/assignment_teacher':
         return MaterialPageRoute(

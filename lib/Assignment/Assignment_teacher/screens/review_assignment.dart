@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:gradientbutton/lineargradientbutton.dart';
+
+import 'package:phygitalz_project_1/Assignment/Assignment_teacher/widgets/rate_button.dart';
+import 'package:phygitalz_project_1/Assignment/Assignment_teacher/widgets/save_cancel_button.dart';
 import 'package:phygitalz_project_1/Assignment/Assignment_teacher/widgets/status_button.dart';
 import 'package:phygitalz_project_1/config/app_config.dart';
 
@@ -175,7 +177,7 @@ class _ReviewAssignmentState extends State<ReviewAssignment> {
                 child: Text("Select status"),
               ),
             ),
-            ButtonsWidget(),
+            RateButton(),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: TextField(
@@ -248,7 +250,10 @@ class _ReviewAssignmentState extends State<ReviewAssignment> {
                   ),),
             ),
             SizedBox(height: _appConfig.rH(6),),
-            ButtonsWidget(),
+            Padding(
+              padding:  EdgeInsets.only(left:_appConfig.rWP(24),bottom: _appConfig.rHP(1)),
+              child: SaveCancel(),
+            ),
             SizedBox(height: _appConfig.rH(4),),
           ],
         ),
