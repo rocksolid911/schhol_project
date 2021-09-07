@@ -41,6 +41,8 @@ dependencies:
   flushbar: ^1.10.4
   permission_handler: ^6.1.1
   flutter_custom_dialog: ^1.0.20
+  gradient_widgets: ^0.6.0
+  flutter_plus: ^1.0.0
 
   #custom packages
 
@@ -84,6 +86,21 @@ flutter:
     - assets/images/Subject_Icon_Maths.svg
     - assets/images/Timetable_Calendar_Card.svg
     - assets/images/profile_img.jpeg
+    - assets/images/Subject_Icon_W.Name_Maths.svg
+    - assets/images/Create_Icon_Assignment.svg
+    - assets/images/Delete Icon.svg
+    - assets/images/Edit_Icon.svg
+    - assets/images/Pen_Icon_Assignment.svg
+    - assets/images/Preview_icon _Assignment.svg
+    - assets/images/Assignments.svg
+    - assets/images/Attendance.svg
+    - assets/images/Calendar.svg
+    - assets/images/Calendar-Background.svg
+    - assets/images/Circular.svg
+    - assets/images/Issues.svg
+    - assets/images/Leave.svg
+    - assets/images/Logout.svg
+    - assets/images/Settings.svg
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

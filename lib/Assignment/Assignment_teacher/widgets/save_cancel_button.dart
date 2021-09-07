@@ -34,12 +34,12 @@ class _SaveCancelState extends State<SaveCancel> {
                     height: _appConfig.rH(5),
                     width: _appConfig.rW(22),
                     text: "Cancel",
-                    startcolor: 0xFFC987DE,
-                    midcolor: 0xFF7A17AF,
-                    endcolor: 0xFF7A17AF,
+                    startcolor: 0xFFDF003D,
+                    midcolor: 0xFFDF0075,
+                    endcolor: 0xFFDF00AD,
                     radius: _appConfig.rW(9),
                     activecolor: Colors.white,
-                    inactivecolor: Color(0xFF7A17AF),
+                    inactivecolor: Colors.pinkAccent,
                     selected: selectedButton10B,
                     onTap: (){
                       setState(() {
@@ -57,16 +57,17 @@ class _SaveCancelState extends State<SaveCancel> {
                     width: _appConfig.rW(22),
                     text: "Save",
                     selected: selectedButton10A,
-                    startcolor: 0xFFC987DE,
-                    midcolor: 0xFF7A17AF,
-                    endcolor: 0xFF7A17AF,
+                    startcolor: 0xFFDF003D,
+                    midcolor: 0xFFDF0075,
+                    endcolor: 0xFFDF00AD,
                     radius: _appConfig.rW(9),
                     activecolor: Colors.white,
-                    inactivecolor: Color(0xFF7A17AF),
+                    inactivecolor: Colors.pinkAccent,
                     onTap: (){
                       setState(() {
                         selectedButton10B = false;
                         selectedButton10A = true;
+                        Navigator.pop(context);
 
                       });
                     },

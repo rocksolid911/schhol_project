@@ -24,6 +24,8 @@ class CustomAnimatedButton extends StatefulWidget {
   Color activecolor;
   //inactive button color
   Color inactivecolor;
+  //font size
+  double fntsize;
 
   CustomAnimatedButton({
     // this.unselectedImagePath,
@@ -39,6 +41,7 @@ class CustomAnimatedButton extends StatefulWidget {
     required this.radius,
     required this.activecolor,
     required this.inactivecolor,
+    required this.fntsize,
   });
 
   @override
@@ -87,7 +90,7 @@ late AppConfig _appConfig;
                   RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(widget.radius),
                     side: BorderSide(
-                      color: Color(0xFF7A17AF),
+                      color: Colors.pinkAccent,
                     ),
                   ),
                 ),
@@ -115,7 +118,7 @@ late AppConfig _appConfig;
                             ? widget.activecolor
                             : widget.inactivecolor,
                         fontFamily: "Roboto",
-                        fontSize: 14),
+                        fontSize: widget.fntsize),
                   ),
                 ),
               ),

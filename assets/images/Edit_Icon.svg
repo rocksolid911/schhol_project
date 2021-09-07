@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18.9" height="17.649" viewBox="0 0 18.9 17.649">
+  <defs>
+    <linearGradient id="linear-gradient" x1="-0.162" y1="1.23" x2="1.177" y2="-0.135" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fa5435"/>
+      <stop offset="0.502" stop-color="#b617a4"/>
+      <stop offset="1" stop-color="#7717b0"/>
+    </linearGradient>
+  </defs>
+  <g id="Group_18903" data-name="Group 18903" transform="translate(-166.395 -1264.721)">
+    <g id="Edit_Icon" data-name="Edit Icon" transform="translate(166.395 1264.721)">
+      <path id="Icon_awesome-edit" data-name="Icon awesome-edit" d="M13.21,2.872l2.96,3.11a.349.349,0,0,1,0,.476L9,13.988l-3.045.355a.655.655,0,0,1-.705-.741l.338-3.2,7.166-7.53A.31.31,0,0,1,13.21,2.872Zm5.316-.79L16.924.4a1.24,1.24,0,0,0-1.811,0l-1.162,1.22a.349.349,0,0,0,0,.476l2.96,3.11a.31.31,0,0,0,.453,0l1.162-1.22a1.4,1.4,0,0,0,0-1.9ZM12.6,11.94v3.51H2.1V4.417H9.64A.394.394,0,0,0,9.919,4.3l1.312-1.379a.417.417,0,0,0-.279-.707H1.575A1.617,1.617,0,0,0,0,3.865V16a1.617,1.617,0,0,0,1.575,1.655h11.55A1.617,1.617,0,0,0,14.7,16V10.561a.392.392,0,0,0-.673-.293l-1.312,1.379A.435.435,0,0,0,12.6,11.94Z" transform="translate(0 -0.007)" fill="url(#linear-gradient)"/>
+    </g>
+  </g>
+</svg>

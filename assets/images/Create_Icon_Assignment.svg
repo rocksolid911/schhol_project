@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="88.92" height="88.92" viewBox="0 0 88.92 88.92">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.071" y1="1.046" x2="0.934" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fa5435"/>
+      <stop offset="0.509" stop-color="#b617a4"/>
+      <stop offset="1" stop-color="#7717b0"/>
+    </linearGradient>
+    <filter id="Ellipse_255" x="0" y="0" width="88.92" height="88.92" filterUnits="userSpaceOnUse">
+      <feOffset dy="1" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Pre-KG_selected_icon" transform="translate(14.54 14)">
+    <g transform="matrix(1, 0, 0, 1, -14.54, -14)" filter="url(#Ellipse_255)">
+      <g id="Ellipse_255-2" data-name="Ellipse 255" transform="translate(15 14)" stroke="#fff" stroke-width="2" fill="url(#linear-gradient)">
+        <circle cx="29.46" cy="29.46" r="29.46" stroke="none"/>
+        <circle cx="29.46" cy="29.46" r="28.46" fill="none"/>
+      </g>
+    </g>
+    <path id="ic_add_24px" d="M29.109,15.045H16.634V26.328H12.475V15.045H0V11.284H12.475V0h4.158V11.284H29.109Z" transform="translate(15.365 16.296)" fill="#fff"/>
+  </g>
+</svg>

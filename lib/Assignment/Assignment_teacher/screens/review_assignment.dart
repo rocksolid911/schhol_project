@@ -49,213 +49,232 @@ class _ReviewAssignmentState extends State<ReviewAssignment> {
         ),
         actions: [], //to add gradient color to app bar
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            Padding(
-              padding: EdgeInsets.only(
-                  left: _appConfig.rWP(8),
-                  right: _appConfig.rWP(8),
-                  bottom: _appConfig.rHP(2),
-                  top: _appConfig.rHP(4)),
-              child: Row(
-                children: [
-                  SvgPicture.asset(
-                    "assets/images/Subject_Icon_Chemistry.svg",
-                    width: _appConfig.rW(10),
-                    height: _appConfig.rH(10),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(
-                      left: _appConfig.rWP(4),
-                      bottom: _appConfig.rHP(3),
-                    ),
-                    child: Text(
-                      "Chemistry",
-                      style:
-                          TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.only(
-                  left: _appConfig.rWP(8),
-                  bottom: _appConfig.rWP(8),
-                  right: _appConfig.rWP(8)),
-              child: Text(
-                "complete the Exercise as given",
-                style: TextStyle(fontSize: 22),
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.only(
-                left: _appConfig.rWP(2),
-                bottom: _appConfig.rHP(2),
-                right: _appConfig.rWP(2),
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Column(
-                    children: [
-                      Opacity(
-                        opacity: 0.4,
-                        child: Text(
-                          "Name",
-                          style: TextStyle(fontSize: 18),
-                        ),
-                      ),
-                      Text(
-                        "Vishal Krisnan",
-                        style: TextStyle(fontSize: 18),
-                      ),
-                    ],
-                  ),
-                  Column(
-                    children: [
-                      Opacity(
-                        opacity: 0.4,
-                        child: Text(
-                          "Submitted Date",
-                          style: TextStyle(fontSize: 18),
-                        ),
-                      ),
-                      Text(
-                        "21 Oct",
-                        style: TextStyle(fontSize: 18),
-                      ),
-                    ],
-                  )
-                ],
-              ),
-            ),
-            Card(
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15)),
-              elevation: 5,
-              child: Container(
-                height: _appConfig.rH(20),
-                width: _appConfig.rW(90),
-                child: Column(
+      body: Scrollbar(
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Padding(
+                padding: EdgeInsets.only(
+                    left: _appConfig.rWP(8),
+                    right: _appConfig.rWP(8),
+                    bottom: _appConfig.rHP(2),
+                    top: _appConfig.rHP(4)),
+                child: Row(
                   children: [
+                    SvgPicture.asset(
+                      "assets/images/Subject_Icon_W.Name_Chemistry.svg",
+                      width: _appConfig.rW(10),
+                      height: _appConfig.rH(10),
+                    ),
                     Padding(
                       padding: EdgeInsets.only(
-                          left: _appConfig.rWP(1),
-                          right: _appConfig.rWP(24),
-                          top: _appConfig.rHP(3)),
+                        left: _appConfig.rWP(4),
+                        bottom: _appConfig.rHP(0),
+                      ),
                       child: Text(
-                        "Submmited Assignment",
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 16),
+                        "Chemistry",
+                        style:
+                            TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
                       ),
                     ),
-                    Divider(),
                   ],
                 ),
               ),
-            ),
-            Padding(
-              padding: EdgeInsets.only(
-                  left: _appConfig.rWP(1),
-                  right: _appConfig.rWP(60),
-                  top: _appConfig.rHP(3)),
-              child: Opacity(
-                opacity: 0.5,
-                child: Text("Select status"),
-              ),
-            ),
-            ButtonsWidget(),
-            Padding(
-              padding: EdgeInsets.only(
-                  left: _appConfig.rWP(1),
-                  right: _appConfig.rWP(60),
-                  top: _appConfig.rHP(3)),
-              child: Opacity(
-                opacity: 0.5,
-                child: Text("Select status"),
-              ),
-            ),
-            RateButton(),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: TextField(
-                decoration: InputDecoration(
-                  labelText: "Teachers feedback",
-                  focusedBorder: OutlineInputBorder(
-                    // gapPadding: 3,
-                    borderRadius: BorderRadius.circular(30.0),
-                    borderSide: BorderSide(
-                      color: Colors.greenAccent,
-                      width: 2.0,
-                    ),
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    //gapPadding: 3,
-                    borderRadius: BorderRadius.circular(30.0),
-                    borderSide: BorderSide(color: Colors.blue, width: 2.0),
-                  ),
-                  hintText: 'Teachers feedback',
+              Padding(
+                padding: EdgeInsets.only(
+                    left: _appConfig.rWP(8),
+                    bottom: _appConfig.rWP(8),
+                    right: _appConfig.rWP(8)),
+                child: Text(
+                  "complete the Exercise as given",
+                  style: TextStyle(fontSize: 22),
                 ),
               ),
-            ),
-            Card(
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15)),
-              elevation: 5,
-              child: Container(
-                height: _appConfig.rH(20),
-                width: _appConfig.rW(90),
-                child: Column(
+              Padding(
+                padding: EdgeInsets.only(
+                  left: _appConfig.rWP(2),
+                  bottom: _appConfig.rHP(2),
+                  right: _appConfig.rWP(2),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Padding(
-                      padding: EdgeInsets.only(
-                          left: _appConfig.rWP(4),
-                          //right: _appConfig.rWP(1),
-                          top: _appConfig.rHP(1)),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            "Attach corrected Assignment",
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 16),
-                          ),
-                          Padding(
-                            padding:
-                                EdgeInsets.only(right: _appConfig.rWP(2.5)),
-                            //TODO make it an iconbutton
-                            child: Icon(
-                              Icons.edit,
-                              color: Colors.pinkAccent,
-                              size: _appConfig.rH(4),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Opacity(
+                          opacity: 0.4,
+                          child: Align(
+                            alignment: Alignment.centerLeft,
+                            child: Text(
+                              "Name is name",
+                              style: TextStyle(fontSize: 18),
                             ),
                           ),
-                        ],
-                      ),
+                        ),
+                        Align(
+                          alignment: Alignment.centerLeft,
+                          child: Text(
+                            "Vishall23",
+                            style: TextStyle(fontSize: 18),
+                          ),
+                        ),
+                      ],
                     ),
-                    Divider(),
+                    Column(
+
+                      children: [
+                        Padding(
+                          padding:  EdgeInsets.only(right:8.0),
+                          child: Opacity(
+                            opacity: 0.4,
+                            child: Text(
+                              "Submitted Date",
+                              style: TextStyle(fontSize: 16),
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(right:82),
+                          child: Text(
+                            "21 Oct",
+                            style: TextStyle(fontSize: 18),
+                          ),
+                        ),
+                      ],
+                    )
                   ],
                 ),
               ),
-            ),
-            Padding(
-              padding:  EdgeInsets.only(right: _appConfig.rWP(46)),
-              child: Opacity(
+              Card(
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15)),
+                elevation: 5,
+                child: Container(
+                  height: _appConfig.rH(20),
+                  width: _appConfig.rW(90),
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(
+                            left: _appConfig.rWP(1),
+                            right: _appConfig.rWP(24),
+                            top: _appConfig.rHP(3)),
+                        child: Text(
+                          "Submmited Assignment",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 16),
+                        ),
+                      ),
+                      Divider(),
+                    ],
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(
+                    left: _appConfig.rWP(1),
+                    right: _appConfig.rWP(56),
+                    top: _appConfig.rHP(3)),
+                child: Opacity(
                   opacity: 0.5,
-                  child: Text(
-                    "max upload size 500mb",
-                    style: TextStyle(fontSize: 12),
-                  ),),
-            ),
-            SizedBox(height: _appConfig.rH(6),),
-            Padding(
-              padding:  EdgeInsets.only(left:_appConfig.rWP(24),bottom: _appConfig.rHP(1)),
-              child: SaveCancel(),
-            ),
-            SizedBox(height: _appConfig.rH(4),),
-          ],
+                  child: Text("Select status"),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(left: _appConfig.rWP(4)),
+                child: ButtonsWidget(),
+              ),
+              Padding(
+                padding: EdgeInsets.only(
+                    left: _appConfig.rWP(8),
+                    right: _appConfig.rWP(55),
+                    top: _appConfig.rHP(3)),
+                child: Opacity(
+                  opacity: 0.5,
+                  child: Text("Rate Assignment"),
+                ),
+              ),
+              RateButton(),
+              Padding(
+                padding: const EdgeInsets.all(14.0),
+                child: TextField(
+                  decoration: InputDecoration(
+                    labelText: "Teachers feedback",
+                    focusedBorder: OutlineInputBorder(
+                      // gapPadding: 3,
+                      borderRadius: BorderRadius.circular(8.0),
+                      borderSide: BorderSide(
+                        color: Colors.greenAccent,
+                        width: 2.0,
+                      ),
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      //gapPadding: 3,
+                      borderRadius: BorderRadius.circular(8.0),
+                      borderSide: BorderSide(color: Colors.pinkAccent, width: 2.0),
+                    ),
+                    hintText: 'Teachers feedback',
+                  ),
+                ),
+              ),
+              Card(
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15)),
+                elevation: 5,
+                child: Container(
+                  height: _appConfig.rH(20),
+                  width: _appConfig.rW(90),
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(
+                            left: _appConfig.rWP(4),
+                            //right: _appConfig.rWP(1),
+                            top: _appConfig.rHP(1)),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              "Attach corrected Assignment",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 14),
+                            ),
+                            Padding(
+                              padding:
+                                  EdgeInsets.only(right: _appConfig.rWP(2.5)),
+                              //TODO make it an iconbutton
+                              child: Icon(
+                                Icons.edit,
+                                color: Colors.pinkAccent,
+                                size: _appConfig.rH(4),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Divider(),
+                    ],
+                  ),
+                ),
+              ),
+              Padding(
+                padding:  EdgeInsets.only(right: _appConfig.rWP(42)),
+                child: Opacity(
+                    opacity: 0.5,
+                    child: Text(
+                      "max upload size 500mb",
+                      style: TextStyle(fontSize: 12),
+                    ),),
+              ),
+              SizedBox(height: _appConfig.rH(6),),
+              Padding(
+                padding:  EdgeInsets.only(left:_appConfig.rWP(24),bottom: _appConfig.rHP(1)),
+                child: SaveCancel(),
+              ),
+              SizedBox(height: _appConfig.rH(4),),
+            ],
+          ),
         ),
       ),
     );

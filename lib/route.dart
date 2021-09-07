@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:phygitalz_project_1/Assignment/Assignment_teacher/screens/assignment_draft_view.dart';
 import 'package:phygitalz_project_1/Assignment/Assignment_teacher/screens/assignment_teacher_draft.dart';
+import 'package:phygitalz_project_1/Assignment/Assignment_teacher/screens/create_assignment.dart';
 import 'package:phygitalz_project_1/Assignment/Assignment_teacher/screens/review_assignment.dart';
+import 'package:phygitalz_project_1/Leaves/screens/try.dart';
 import 'package:phygitalz_project_1/Timetable/Taecher_Timetable/screens/PAS_S40_Teacher_1_TimeTable.dart';
 import 'package:phygitalz_project_1/Timetable/Taecher_Timetable/screens/menu_PopUp_Selftask.dart';
 import 'package:phygitalz_project_1/Timetable/Taecher_Timetable/screens/menupopup_updatemeetinglink.dart';
@@ -72,7 +75,7 @@ class RouteGenerator {
         return MaterialPageRoute(
           builder: (_) => MenuPopupSelfTask (),
         );
-      case '/assignment_student':
+      case '/assignment_teacher_main':
         return MaterialPageRoute(
           builder: (_) => AssignmentTeacherMain(),
         );
@@ -83,6 +86,18 @@ class RouteGenerator {
       case '/assignment_review_teacher':
         return MaterialPageRoute(
           builder: (_) => ReviewAssignment(),
+        );
+      case '/create_assignment':
+        return MaterialPageRoute(
+          builder: (_) => CreateAssignment(),
+        );
+      case '/draft_view':
+        return MaterialPageRoute(
+          builder: (_) => DraftView(),
+        );
+      case '/try':
+        return MaterialPageRoute(
+          builder: (_) => Try(),
         );
         // If args is not of the correct type, return an error page.
         // You can also throw an exception while in development.

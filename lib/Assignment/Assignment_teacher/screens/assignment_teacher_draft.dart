@@ -175,7 +175,7 @@ class _AssignmentTeacherState extends State<AssignmentTeacher>
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: SizedBox(
-                      height: _appConfig.rH(10),
+                      height: _appConfig.rH(12),
                       width: double.infinity,
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -251,7 +251,7 @@ class _AssignmentTeacherState extends State<AssignmentTeacher>
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: SizedBox(
-                      height: _appConfig.rH(10),
+                      height: _appConfig.rH(12),
                       width: double.infinity,
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -312,7 +312,7 @@ class _AssignmentTeacherState extends State<AssignmentTeacher>
                                     ),
                                     Padding(
                                       padding: EdgeInsets.only(
-                                          left: _appConfig.rWP(25)),
+                                          left: _appConfig.rWP(23)),
                                       child: IconButton(
                                         splashColor: Colors.pinkAccent,
                                         icon: Icon(
@@ -343,91 +343,92 @@ class _AssignmentTeacherState extends State<AssignmentTeacher>
               //Center(child: Text("Tab three")),
               Column(
                 children: [
-                  Container(
-                      height: _appConfig.rH(10.1),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        boxShadow: [
-                          BoxShadow(
-                              color: Colors.black38,
-                              offset: Offset(0, 6),
-                              spreadRadius: 2,
-                              blurRadius: 6)
-                        ],
-                      ),
-                      child: Padding(
-                        padding: EdgeInsets.only(
-                          left: _appConfig.rHP(8.1),
-                        ),
-                        child: Row(
-                          children: [
-                            Container(
-                              child: Center(
-                                child: Text(
-                                  "Timetable",
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 9,
-                                      fontWeight: FontWeight.w900),
-                                ),
-                              ),
-                              decoration: BoxDecoration(
-                                  gradient: LinearGradient(colors: [
-                                    HexColor("#d64575"),
-                                    HexColor("#8522a3")
-                                  ]),
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(30))),
-                              height: _appConfig.rH(3),
-                              width: _appConfig.rW(19.5),
-                            ),
-                            SizedBox(width: _appConfig.rW(4)),
-                            Container(
-                              child: Center(
-                                child: Text(
-                                  "Lab record",
-                                  style: TextStyle(
-                                      color: HexColor("#d64575"),
-                                      fontSize: 9,
-                                      fontWeight: FontWeight.w900),
-                                ),
-                              ),
-                              decoration: BoxDecoration(
-                                  border: Border.all(
-                                    color: HexColor("#d64575"),
-                                  ),
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(30))),
-                              height: _appConfig.rH(3),
-                              width: _appConfig.rW(19.5),
-                            ),
-                            SizedBox(width: _appConfig.rW(4)),
-                            Container(
-                              child: Center(
-                                child: Text(
-                                  "Portfolio",
-                                  style: TextStyle(
-                                      color: HexColor("#d64575"),
-                                      fontSize: 9,
-                                      fontWeight: FontWeight.w900),
-                                ),
-                              ),
-                              decoration: BoxDecoration(
-                                  border: Border.all(
-                                    color: HexColor("#d64575"),
-                                  ),
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(30))),
-                              height: _appConfig.rH(3),
-                              width: _appConfig.rW(19.5),
-                            ),
-                          ],
-                        ),
-                      )),
+                  // Container(
+                  //   height: _appConfig.rH(10.1),
+                  //   decoration: BoxDecoration(
+                  //     color: Colors.white,
+                  //     boxShadow: [
+                  //       BoxShadow(
+                  //           color: Colors.black38,
+                  //           offset: Offset(0, 6),
+                  //           spreadRadius: 2,
+                  //           blurRadius: 6)
+                  //     ],
+                  //   ),
+                  //   child: Padding(
+                  //     padding: EdgeInsets.only(
+                  //       left: _appConfig.rHP(8.1),
+                  //     ),
+                  //     child: Row(
+                  //       children: [
+                  //         Container(
+                  //           child: Center(
+                  //             child: Text(
+                  //               "Timetable",
+                  //               style: TextStyle(
+                  //                   color: Colors.white,
+                  //                   fontSize: 9,
+                  //                   fontWeight: FontWeight.w900),
+                  //             ),
+                  //           ),
+                  //           decoration: BoxDecoration(
+                  //               gradient: LinearGradient(colors: [
+                  //                 HexColor("#d64575"),
+                  //                 HexColor("#8522a3")
+                  //               ]),
+                  //               borderRadius:
+                  //                   BorderRadius.all(Radius.circular(30))),
+                  //           height: _appConfig.rH(3),
+                  //           width: _appConfig.rW(19.5),
+                  //         ),
+                  //         SizedBox(width: _appConfig.rW(4)),
+                  //         Container(
+                  //           child: Center(
+                  //             child: Text(
+                  //               "Lab record",
+                  //               style: TextStyle(
+                  //                   color: HexColor("#d64575"),
+                  //                   fontSize: 9,
+                  //                   fontWeight: FontWeight.w900),
+                  //             ),
+                  //           ),
+                  //           decoration: BoxDecoration(
+                  //               border: Border.all(
+                  //                 color: HexColor("#d64575"),
+                  //               ),
+                  //               borderRadius:
+                  //                   BorderRadius.all(Radius.circular(30))),
+                  //           height: _appConfig.rH(3),
+                  //           width: _appConfig.rW(19.5),
+                  //         ),
+                  //         SizedBox(width: _appConfig.rW(4)),
+                  //         Container(
+                  //           child: Center(
+                  //             child: Text(
+                  //               "Portfolio",
+                  //               style: TextStyle(
+                  //                   color: HexColor("#d64575"),
+                  //                   fontSize: 9,
+                  //                   fontWeight: FontWeight.w900),
+                  //             ),
+                  //           ),
+                  //           decoration: BoxDecoration(
+                  //               border: Border.all(
+                  //                 color: HexColor("#d64575"),
+                  //               ),
+                  //               borderRadius:
+                  //                   BorderRadius.all(Radius.circular(30))),
+                  //           height: _appConfig.rH(3),
+                  //           width: _appConfig.rW(19.5),
+                  //         ),
+                  //       ],
+                  //     ),
+                  //   ),
+                  // ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: SizedBox(
-                      height: _appConfig.rH(10),
+                      height: _appConfig.rH(12),
                       width: double.infinity,
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -494,14 +495,14 @@ class _AssignmentTeacherState extends State<AssignmentTeacher>
                                         ),
                                         Padding(
                                           padding: EdgeInsets.only(
-                                              left: _appConfig.rWP(32)),
+                                              left: _appConfig.rWP(30)),
                                           child: Column(
                                             children: [
                                               Text(
                                                 "Rating",
                                                 style: TextStyle(
-                                                    fontWeight:
-                                                        FontWeight.w100),
+                                                    fontWeight: FontWeight.w100,
+                                                    fontSize: 12),
                                               ),
                                               Text(
                                                 "05",

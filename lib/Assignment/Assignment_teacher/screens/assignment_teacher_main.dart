@@ -1,5 +1,7 @@
 import 'package:flutter_svg/svg.dart';
 import 'package:phygitalz_project_1/Assignment/Assignment_teacher/widgets/assignment_type_select.dart';
+import 'package:phygitalz_project_1/Assignment/Assignment_teacher/widgets/pending_assignment_card.dart';
+import 'package:phygitalz_project_1/Common/widgets/drawer.dart';
 import 'package:phygitalz_project_1/config/app_config.dart';
 
 import '../widgets/student_submitted_card.dart';
@@ -39,6 +41,8 @@ class _AssignmentTeacherMainState extends State<AssignmentTeacherMain>
     // );
 
     return Scaffold(
+      drawer: myDrawer(),
+      key: _drawerkey,
       body: SafeArea(
         child: NestedScrollView(
           headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
@@ -70,16 +74,16 @@ class _AssignmentTeacherMainState extends State<AssignmentTeacherMain>
                 //elevation: 15,
                 backgroundColor: Colors.pinkAccent,
                 flexibleSpace: FlexibleSpaceBar(
-                  //centerTitle: true,
-                  // title: Text("Collapsing Toolbar",
-                  //     style: TextStyle(
-                  //       color: Colors.white,
-                  //       fontSize: 16.0,
-                  //     )),
+                    //centerTitle: true,
+                    // title: Text("Collapsing Toolbar",
+                    //     style: TextStyle(
+                    //       color: Colors.white,
+                    //       fontSize: 16.0,
+                    //     )),
                     background: SvgPicture.asset(
-                      "assets/images/Timetable_Calendar_Card.svg",
-                      fit: BoxFit.none,
-                    )),
+                  "assets/images/Timetable_Calendar_Card.svg",
+                  fit: BoxFit.none,
+                )),
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.only(
                         bottomLeft: Radius.circular(30),
@@ -111,7 +115,7 @@ class _AssignmentTeacherMainState extends State<AssignmentTeacherMain>
                             height: _appConfig.rH(1),
                           ),
                           Text(
-                            "Pending",
+                            "Draft",
                             style: TextStyle(color: Colors.white, fontSize: 10),
                           ),
                         ],
@@ -128,13 +132,15 @@ class _AssignmentTeacherMainState extends State<AssignmentTeacherMain>
                             height: _appConfig.rH(1),
                           ),
                           Text(
-                            "Submitted",
+                            "Pending",
                             style: TextStyle(fontSize: 10, color: Colors.white),
                           ),
                         ],
                       ),
                     ),
                     Tab(
+                      //TODO run time error is coming for this coloumn try adding container
+                      //instead of coloumn
                       child: Column(
                         children: [
                           Text(
@@ -145,13 +151,12 @@ class _AssignmentTeacherMainState extends State<AssignmentTeacherMain>
                             height: _appConfig.rH(1),
                           ),
                           Text(
-                            "Accepted",
+                            "Closed",
                             style: TextStyle(color: Colors.white, fontSize: 10),
                           ),
                         ],
                       ),
                     ),
-
                   ],
                   controller: controller,
                 ),
@@ -162,17 +167,61 @@ class _AssignmentTeacherMainState extends State<AssignmentTeacherMain>
           body: TabBarView(
             controller: controller,
             children: <Widget>[
-
-
-              Column(
+              Stack(
                 children: [
-                  SelectTypeAssignment(),
-                  submtted_card(),
+                  Column(
+                    children: [
+                      SelectTypeAssignment(),
+                      SizedBox(
+                        height: _appConfig.rH(2.5),
+                      ),
+                      submtted_card(),
+                    ],
+                  ),
+                  Positioned(
+                    child: GestureDetector(
+                      child: SvgPicture.asset(
+                        "assets/images/Create_Icon_Assignment.svg",
+                        height: _appConfig.rH(13),
+                        width: _appConfig.rW(13),
+                      ),
+                      onTap: (){
+                        Navigator.pushNamed(context, "/create_assignment");
+                      },
+                    ),
+                    top: _appConfig.rH(60),
+                    right: _appConfig.rW(10),
+                  ),
                 ],
               ),
-              submtted_card(),
+              Stack(
+                children: [
+                  Column(
+                    children: [
+                      SelectTypeAssignment(),
+                      SizedBox(
+                        height: _appConfig.rH(2.5),
+                      ),
+                      PendingCard(),
+                    ],
+                  ),
+                  Positioned(
+                    child: GestureDetector(
+                      child: SvgPicture.asset(
+                        "assets/images/Create_Icon_Assignment.svg",
+                        height: _appConfig.rH(13),
+                        width: _appConfig.rW(13),
+                      ),
+                      onTap: (){
+                        Navigator.pushNamed(context, "/create_assignment");
+                      },
+                    ),
+                    top: _appConfig.rH(60),
+                    right: _appConfig.rW(10),
+                  ),
+                ],
+              ),
               Center(child: Text("Tab three")),
-
             ],
           ),
         ),

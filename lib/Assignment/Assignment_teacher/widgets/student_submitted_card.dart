@@ -3,91 +3,96 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:phygitalz_project_1/config/app_config.dart';
 
-
 class submtted_card extends StatefulWidget {
-
-
   @override
   _submtted_cardState createState() => _submtted_cardState();
 }
 
 class _submtted_cardState extends State<submtted_card> {
-
   AppConfig _appConfig;
   @override
   Widget build(BuildContext context) {
     _appConfig = AppConfig(context);
     return Expanded(
       child: Container(
-       // height: _appConfig.rH(70),
+        // height: _appConfig.rH(70),
         child: ListView.builder(
             shrinkWrap: true,
-            itemCount: 5,
+            itemCount: 15,
             itemBuilder: (builder, context) {
               return Container(
                 child: Column(
                   children: [
                     Card(
-                      elevation: 3,
+                      elevation: 5,
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.only(
                               topLeft: Radius.circular(10),
                               topRight: Radius.circular(10),
                               bottomRight: Radius.circular(10))),
                       child: Container(
-                        height: _appConfig.rH(19),
-                        width: _appConfig.rW(85.5),
+                        height: _appConfig.rH(17),
+                        width: _appConfig.rW(86),
                         child: Stack(
                           children: [
                             Padding(
                                 padding: EdgeInsets.only(
                                     top: _appConfig.rHP(1.8),
                                     left: _appConfig.rWP(4)),
-                                child:SvgPicture.asset("assets/images/Subject_Icon_Maths.svg", height: _appConfig.rH(5),
-                                  width: _appConfig.rW(5),)
-                            ),// color: HexColor("#f55f5f"),
-
+                                child: SvgPicture.asset(
+                                  "assets/images/Subject_Icon_W.Name_Maths.svg",
+                                  height: _appConfig.rH(5),
+                                  width: _appConfig.rW(5),
+                                )), // color: HexColor("#f55f5f"),
 
                             Padding(
                               padding: EdgeInsets.only(
                                   top: _appConfig.rHP(3.2),
-                                  left: _appConfig.rWP(15.5)),
+                                  left: _appConfig.rWP(18)),
                               child: Text("Maths",
                                   style: TextStyle(
                                       fontWeight: FontWeight.w900,
-                                      fontSize: 11)),
+                                      fontSize: 14)),
                             ),
-
-
-
-
 
                             Padding(
                                 padding: EdgeInsets.only(
                                     top: _appConfig.rHP(2.8),
-                                    left: _appConfig.rWP(64)),
-                                //child:SvgPicture.asset("assets/preview.svg", height: _appConfig.rH(2.5),
-                                 child:GestureDetector(child: Icon(Icons.receipt_long),onTap: (){},),
-                              //width: _appConfig.rW(2.5),)
-                            ),
+                                    left: _appConfig.rWP(52)),
+                                child: GestureDetector(
+                                  child: SvgPicture.asset(
+                                    "assets/images/Edit_Icon.svg",
+                                    height: _appConfig.rH(2.5),
+                                    width: _appConfig.rW(2.5),
+                                  ),
+                                  onTap: (){
+                                    Navigator.pushNamed(this.context, "/create_assignment");
+                                  },
+                                )),
 
-
-
-
-
+                            Padding(
+                                padding: EdgeInsets.only(
+                                    top: _appConfig.rHP(2.8),
+                                    left: _appConfig.rWP(62)),
+                                child: GestureDetector(
+                                  child: SvgPicture.asset(
+                                    "assets/images/Preview_icon _Assignment.svg",
+                                    height: _appConfig.rH(2.5),
+                                    width: _appConfig.rW(2.5),
+                                  ),
+                                  onTap: (){
+                                    Navigator.pushNamed(this.context, "/draft_view");
+                                  },
+                                )),
                             Padding(
                                 padding: EdgeInsets.only(
                                     top: _appConfig.rHP(2.8),
                                     left: _appConfig.rWP(75)),
-                                // child:SvgPicture.asset("assets/send.svg", height: _appConfig.rH(2.5),
-                                //   width: _appConfig.rW(2.5),)
-                              child:GestureDetector(child: Icon(Icons.remove_red_eye_outlined),onTap: (){},),
-                            ),
-
-
-
-
-
+                                child: SvgPicture.asset(
+                                  "assets/images/Delete Icon.svg",
+                                  height: _appConfig.rH(2.5),
+                                  width: _appConfig.rW(2.5),
+                                )),
 
                             Padding(
                               padding: EdgeInsets.only(
@@ -109,62 +114,64 @@ class _submtted_cardState extends State<submtted_card> {
                               child: Text(
                                   "Complete the assignment on Algebra Topic.",
                                   style: TextStyle(
-                                      color:Colors.black54,
+                                      color: Colors.black54,
                                       fontWeight: FontWeight.w900,
                                       fontSize: 10.5)),
                             ),
+                            // Padding(
+                            //   padding: EdgeInsets.only(
+                            //       top: _appConfig.rHP(13.5),
+                            //       left: _appConfig.rWP(5.5),
+                            //       bottom: _appConfig.rWP(5)),
+                            //   child: Row(
+                            //     children: [
+                            //       Text("Attached Assignment Documents",
+                            //           style: TextStyle(
+                            //               color: Colors.black54,
+                            //               fontWeight: FontWeight.w900,
+                            //               fontSize: 10)),
+                            //     ],
+                            //   ),
+                            // ),
+                            // Padding(
+                            //   padding:  EdgeInsets.only(top: _appConfig.rHP(15.7),left: _appConfig.rHP(2.7)),
+                            //   //child: SvgPicture.asset("assets/documt.svg",height:_appConfig.rH(1.7),width: _appConfig.rW(2),),
+                            //   child:GestureDetector(child: Icon(Icons.delete),onTap: (){},),
+                            // ),
                             Padding(
                               padding: EdgeInsets.only(
-                                  top: _appConfig.rHP(13.5),
-                                  left: _appConfig.rWP(5.5),
-                                  bottom: _appConfig.rWP(5)),
-                              child: Row(
-                                children: [
-
-                                  Text(
-                                      "Attached Assignment Documents",
-                                      style: TextStyle(
-                                          color: Colors.black54,
-                                          fontWeight: FontWeight.w900,
-                                          fontSize: 7.5)),
-                                ],
-                              ),
-                            ),
-                            Padding(
-                              padding:  EdgeInsets.only(top: _appConfig.rHP(15.7),left: _appConfig.rHP(2.7)),
-                              //child: SvgPicture.asset("assets/documt.svg",height:_appConfig.rH(1.7),width: _appConfig.rW(2),),
-                              child:GestureDetector(child: Icon(Icons.delete),onTap: (){},),
-                            ),
-                            Padding(
-                              padding:  EdgeInsets.only(top: _appConfig.rHP(16),left: _appConfig.rHP(4.3)),
-                              child: Text("Document Name.Pdf ",style: TextStyle( color: Colors.black,
-
-                                  fontSize: 7.5)),
+                                  top: _appConfig.rHP(14),
+                                  left: _appConfig.rHP(2.5)),
+                              child: Text("Document Name.Pdf ",
+                                  style: TextStyle(
+                                      color: Colors.black, fontSize: 7.5)),
                             ),
 
-                            Padding(
-                              padding:  EdgeInsets.only(top: _appConfig.rHP(15.7),left: _appConfig.rHP(18.3)),
-                              child: SvgPicture.asset("assets/delete.svg",height:_appConfig.rH(1.5),width: _appConfig.rW(1.5),),
-                            ),
-
-
-
+                            // Padding(
+                            //   padding: EdgeInsets.only(
+                            //       top: _appConfig.rHP(15.7),
+                            //       left: _appConfig.rHP(18.3)),
+                            //   child: SvgPicture.asset(
+                            //     "assets/images/Delete Icon.svg",
+                            //     height: _appConfig.rH(1.5),
+                            //     width: _appConfig.rW(1.5),
+                            //   ),
+                            // ),
 
                             Padding(
                               padding: EdgeInsets.only(
-                                  left: _appConfig.rWP(60),top: _appConfig.rHP(15.5) ),
+                                  left: _appConfig.rWP(59),
+                                  top: _appConfig.rHP(14)),
                               child: Row(
                                 children: [
                                   Text("Due ",
                                       style: TextStyle(
-                                          fontWeight:
-                                          FontWeight.w900,
+                                          fontWeight: FontWeight.w900,
                                           fontSize: 9,
                                           color: Colors.grey)),
                                   Text("20 July 2020",
                                       style: TextStyle(
-                                          fontWeight:
-                                          FontWeight.w900,
+                                          fontWeight: FontWeight.w900,
                                           fontSize: 9)),
                                 ],
                               ),
@@ -176,7 +183,6 @@ class _submtted_cardState extends State<submtted_card> {
                     SizedBox(
                       height: 6,
                     ),
-
                   ],
                 ),
               );

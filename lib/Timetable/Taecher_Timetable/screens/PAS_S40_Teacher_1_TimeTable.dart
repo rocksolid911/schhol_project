@@ -67,7 +67,7 @@ class _TimetableTeacherScreenState extends State<TimetableTeacherScreen> {
     return Container(
       width: MediaQuery.of(context).size.width,
       //TODO make it responsive
-      height: 230,
+      height: _appConfig.rH(29),
       decoration: BoxDecoration(
         image: DecorationImage(
             image: AssetImage("assets/images/3.jpg"), fit: BoxFit.fill),
@@ -155,10 +155,10 @@ class _TimetableTeacherScreenState extends State<TimetableTeacherScreen> {
               format = _format;
             },
           ),
-          GestureDetector(
-            child: Icon(Icons.keyboard_arrow_down_rounded),
-            onTap: () {},
-          )
+          // GestureDetector(
+          //   child: Icon(Icons.keyboard_arrow_down_rounded),
+          //   onTap: () {},
+          // )
         ],
       ),
     );

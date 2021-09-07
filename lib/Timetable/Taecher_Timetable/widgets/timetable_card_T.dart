@@ -29,7 +29,7 @@ class _TeacherTimeCardState extends State<TeacherTimeCard> {
                     bottomRight: Radius.circular(10))),
             child: Container(
               height: _appConfig.rH(22),
-              width: _appConfig.rW(61.5),
+              width: _appConfig.rW(66),
               child: Column(
                 children: [
                   Row(
