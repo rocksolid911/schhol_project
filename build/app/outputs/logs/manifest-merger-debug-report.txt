@@ -7,6 +7,7 @@ INJECTED from /Users/rocksolid/Documents/GitHub/schhol_project/android/app/src/m
 MERGED from /Users/rocksolid/Documents/GitHub/schhol_project/android/app/src/main/AndroidManifest.xml:1:1-41:12
 MERGED from [:hexcolor] /Users/rocksolid/Documents/GitHub/schhol_project/build/hexcolor/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
 MERGED from [:shared_preferences] /Users/rocksolid/Documents/GitHub/schhol_project/build/shared_preferences/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
+MERGED from [:path_provider] /Users/rocksolid/Documents/GitHub/schhol_project/build/path_provider/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
 MERGED from [:google_sign_in] /Users/rocksolid/Documents/GitHub/schhol_project/build/google_sign_in/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:permission_handler] /Users/rocksolid/Documents/GitHub/schhol_project/build/permission_handler/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
 MERGED from [:flutter_custom_dialog] /Users/rocksolid/Documents/GitHub/schhol_project/build/flutter_custom_dialog/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
@@ -130,6 +131,8 @@ MERGED from [:hexcolor] /Users/rocksolid/Documents/GitHub/schhol_project/build/h
 MERGED from [:hexcolor] /Users/rocksolid/Documents/GitHub/schhol_project/build/hexcolor/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:shared_preferences] /Users/rocksolid/Documents/GitHub/schhol_project/build/shared_preferences/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:shared_preferences] /Users/rocksolid/Documents/GitHub/schhol_project/build/shared_preferences/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:path_provider] /Users/rocksolid/Documents/GitHub/schhol_project/build/path_provider/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:path_provider] /Users/rocksolid/Documents/GitHub/schhol_project/build/path_provider/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:google_sign_in] /Users/rocksolid/Documents/GitHub/schhol_project/build/google_sign_in/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:google_sign_in] /Users/rocksolid/Documents/GitHub/schhol_project/build/google_sign_in/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:permission_handler] /Users/rocksolid/Documents/GitHub/schhol_project/build/permission_handler/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44

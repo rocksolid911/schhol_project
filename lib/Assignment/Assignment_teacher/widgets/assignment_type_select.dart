@@ -1,19 +1,31 @@
+import 'package:custombutton/custombutton.dart';
 import 'package:flutter/material.dart';
 import 'package:gradientbutton/appconfig.dart';
-import 'package:hexcolor/hexcolor.dart';
+
+import 'package:phygitalz_project_1/Assignment/Assignment_teacher/models/datajson.dart';
 
 class SelectTypeAssignment extends StatefulWidget {
-  const SelectTypeAssignment({Key key}) : super(key: key);
+  final List<Assignment> homeworks;
+  SelectTypeAssignment({Key key, this.homeworks}) : super(key: key);
 
   @override
-  _SelectTypeAssignmentState createState() => _SelectTypeAssignmentState();
+  _SelectTypeAssignmentState createState() =>
+      _SelectTypeAssignmentState(homeworks);
 }
 
 class _SelectTypeAssignmentState extends State<SelectTypeAssignment> {
   AppConfig _appConfig;
+  bool homework = false;
+  bool labrecord = false;
+  bool portfolio = false;
+  List<Assignment> homeworks;
+
+  _SelectTypeAssignmentState(List<Assignment> homeworks);
+
   @override
   Widget build(BuildContext context) {
     _appConfig = AppConfig(context);
+
     return Container(
       height: _appConfig.rH(9),
       decoration: BoxDecoration(
@@ -27,65 +39,64 @@ class _SelectTypeAssignmentState extends State<SelectTypeAssignment> {
         ],
       ),
       child: Padding(
-        padding: EdgeInsets.only(
-          left: _appConfig.rHP(8.1),
-        ),
+        padding:  EdgeInsets.only(left: 8.0),
         child: Row(
           children: [
-            Container(
-              child: Center(
-                child: Text(
-                  "Timetable",
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 9,
-                      fontWeight: FontWeight.w900),
-                ),
-              ),
-              decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                      colors: [HexColor("#d64575"), HexColor("#8522a3")]),
-                  borderRadius: BorderRadius.all(Radius.circular(30))),
-              height: _appConfig.rH(3),
-              width: _appConfig.rW(19.5),
+            CustomButton(
+              bdrRadius: 20,
+              text: "Homework",
+              startcolor: (0xFFD73865),
+              midcolor: (0xFFA40DAB),
+              endcolor: (0xFF8A09B1),
+              selected: homework,
+              onTap: () {
+                setState(() {
+                  homework = true;
+                  labrecord = false;
+                  portfolio = false;
+                  print("value of homework:$homework");
+                });
+              },
+              activecolor: Colors.white,
+              inactivecolor: Colors.pinkAccent,
             ),
             SizedBox(width: _appConfig.rW(4)),
-            Container(
-              child: Center(
-                child: Text(
-                  "Lab record",
-                  style: TextStyle(
-                      color: HexColor("#d64575"),
-                      fontSize: 9,
-                      fontWeight: FontWeight.w900),
-                ),
-              ),
-              decoration: BoxDecoration(
-                  border: Border.all(
-                    color: HexColor("#d64575"),
-                  ),
-                  borderRadius: BorderRadius.all(Radius.circular(30))),
-              height: _appConfig.rH(3),
-              width: _appConfig.rW(19.5),
+            CustomButton(
+              bdrRadius: 20,
+              text: "LabRecord",
+              startcolor: (0xFFD73865),
+              midcolor: (0xFFA40DAB),
+              endcolor: (0xFF8A09B1),
+              selected: labrecord,
+              onTap: () {
+                setState(() {
+                  homework = false;
+                  labrecord = true;
+                  portfolio = false;
+                  print("value of lab:$labrecord");
+                });
+              },
+              activecolor: Colors.white,
+              inactivecolor: Colors.pinkAccent,
             ),
             SizedBox(width: _appConfig.rW(4)),
-            Container(
-              child: Center(
-                child: Text(
-                  "Portfolio",
-                  style: TextStyle(
-                      color: HexColor("#d64575"),
-                      fontSize: 9,
-                      fontWeight: FontWeight.w900),
-                ),
-              ),
-              decoration: BoxDecoration(
-                  border: Border.all(
-                    color: HexColor("#d64575"),
-                  ),
-                  borderRadius: BorderRadius.all(Radius.circular(30))),
-              height: _appConfig.rH(3),
-              width: _appConfig.rW(19.5),
+            CustomButton(
+              bdrRadius: 20,
+              text: "Portfolio",
+              startcolor: (0xFFD73865),
+              midcolor: (0xFFA40DAB),
+              endcolor: (0xFF8A09B1),
+              selected: portfolio,
+              onTap: () {
+                setState(() {
+                  homework = false;
+                  labrecord = false;
+                  portfolio = true;
+                  print("value of port :$portfolio");
+                });
+              },
+              activecolor: Colors.white,
+              inactivecolor: Colors.pinkAccent,
             ),
           ],
         ),

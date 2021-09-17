@@ -12,6 +12,8 @@ class TeacherTimeTableProvider with ChangeNotifier {
       Uri.parse("$serverPath/PAS_S40_Timetable/PAS_S40_Teacher_View/$id"),
     );
     timetableTeacher = timetableTeacherFromJson(response.body);
+    notifyListeners();
     return timetableTeacher;
+
   }
 }

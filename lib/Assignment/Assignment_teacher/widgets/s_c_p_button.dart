@@ -48,7 +48,7 @@ class _SavePublishButtonState extends State<SavePublishButton> {
                         publish=false;
 
                       });
-                    },
+                    }, fntsize: 12,
                   ),
                 ),
                 Padding(
@@ -71,7 +71,7 @@ class _SavePublishButtonState extends State<SavePublishButton> {
                         publish=false;
 
                       });
-                    },
+                    }, fntsize: 12,
                   ),
                 ),
                 Padding(
@@ -94,7 +94,7 @@ class _SavePublishButtonState extends State<SavePublishButton> {
                         publish=true;
                         Navigator.pop(context);
                       });
-                    },
+                    }, fntsize: 12,
                   ),
                 ),
                 // ButtonAnimated(),

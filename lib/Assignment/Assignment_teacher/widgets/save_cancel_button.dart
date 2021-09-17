@@ -47,7 +47,7 @@ class _SaveCancelState extends State<SaveCancel> {
                         selectedButton10A = false;
 
                       });
-                    },
+                    }, fntsize: 12,
                   ),
                 ),
                 Padding(
@@ -70,7 +70,7 @@ class _SaveCancelState extends State<SaveCancel> {
                         Navigator.pop(context);
 
                       });
-                    },
+                    }, fntsize: 12,
                   ),
                 ),
 

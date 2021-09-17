@@ -1,8 +1,14 @@
 import 'package:flutter_svg/svg.dart';
+import 'package:phygitalz_project_1/Assignment/Assignment_teacher/models/datajson.dart';
+import 'package:phygitalz_project_1/Assignment/Assignment_teacher/providers/dataprovider.dart';
+import 'package:phygitalz_project_1/Assignment/Assignment_teacher/providers/filterprovider.dart';
+import 'package:phygitalz_project_1/Assignment/Assignment_teacher/providers/recordprovider.dart';
 import 'package:phygitalz_project_1/Assignment/Assignment_teacher/widgets/assignment_type_select.dart';
 import 'package:phygitalz_project_1/Assignment/Assignment_teacher/widgets/pending_assignment_card.dart';
+import 'package:phygitalz_project_1/Common/widgets/bottomnav.dart';
 import 'package:phygitalz_project_1/Common/widgets/drawer.dart';
 import 'package:phygitalz_project_1/config/app_config.dart';
+import 'package:provider/provider.dart';
 
 import '../widgets/student_submitted_card.dart';
 
@@ -18,6 +24,7 @@ class _AssignmentTeacherMainState extends State<AssignmentTeacherMain>
   TabController controller;
   AppConfig _appConfig;
   final GlobalKey<ScaffoldState> _drawerkey = GlobalKey();
+
   @override
   void initState() {
     super.initState();
@@ -39,10 +46,59 @@ class _AssignmentTeacherMainState extends State<AssignmentTeacherMain>
     //     ),
     //   ),
     // );
-
+    // DataProvider dataProvider = Provider.of<DataProvider>(context);
+    // FilterProvider filterProvider = Provider.of<FilterProvider>(context);
+    // //List<Assignment> draft = dataProvider.assignmentType("Draft");
+    // List <Assignment> draft = filterProvider.filterassigntype("Draft");
+    List <Assignment> draft = Recordprovider().assignment;
     return Scaffold(
       drawer: myDrawer(),
+      bottomNavigationBar: mYBottomNav(),
       key: _drawerkey,
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: FloatingActionButton(
+
+        onPressed: () {
+          Navigator.pushNamed(context, "/create_assignment");
+        },
+        child: Container(
+          // height: 60,
+          // width: 60,
+          height: _appConfig.rH(18), width: _appConfig.rW(18),
+          decoration: BoxDecoration(
+            // image: DecorationImage(
+            //     image: AssetImage(
+            //         "assets/images/Create Icon.png"),
+            //     fit: BoxFit.fill),
+            shape: BoxShape.circle,
+            gradient: LinearGradient(
+              begin: Alignment.bottomLeft,
+              end: Alignment.topRight,
+              colors: [
+                Color(0xFFD73865),
+                Color(0xFFA40DAB),
+                //8A09B1
+                Color(0xFF8A09B1),
+               // Colors.teal,
+                //A40DAB
+
+                //Colors.tealAccent,
+                //D73865
+
+              ],
+            ),
+          ),
+          child: Icon(
+            Icons.add,
+            color: Colors.white,
+            size: 32,
+          ),
+          // child: SvgPicture.asset(
+          //  "assets/images/Create_Icon_Assignment.svg",
+          //   fit: BoxFit.cover,
+          // )
+        ),
+      ),
       body: SafeArea(
         child: NestedScrollView(
           headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
@@ -108,7 +164,7 @@ class _AssignmentTeacherMainState extends State<AssignmentTeacherMain>
                       child: Column(
                         children: [
                           Text(
-                            "03",
+                            "${draft.length}",
                             style: TextStyle(color: Colors.white),
                           ),
                           SizedBox(
@@ -132,7 +188,7 @@ class _AssignmentTeacherMainState extends State<AssignmentTeacherMain>
                             height: _appConfig.rH(1),
                           ),
                           Text(
-                            "Pending",
+                            "Published",
                             style: TextStyle(fontSize: 10, color: Colors.white),
                           ),
                         ],
@@ -164,7 +220,7 @@ class _AssignmentTeacherMainState extends State<AssignmentTeacherMain>
               // SliverList(
             ];
           },
-          body: TabBarView(
+          body:  TabBarView(
             controller: controller,
             children: <Widget>[
               Stack(
@@ -178,20 +234,20 @@ class _AssignmentTeacherMainState extends State<AssignmentTeacherMain>
                       submtted_card(),
                     ],
                   ),
-                  Positioned(
-                    child: GestureDetector(
-                      child: SvgPicture.asset(
-                        "assets/images/Create_Icon_Assignment.svg",
-                        height: _appConfig.rH(13),
-                        width: _appConfig.rW(13),
-                      ),
-                      onTap: (){
-                        Navigator.pushNamed(context, "/create_assignment");
-                      },
-                    ),
-                    top: _appConfig.rH(60),
-                    right: _appConfig.rW(10),
-                  ),
+                  // Positioned(
+                  //   child: GestureDetector(
+                  //     child: SvgPicture.asset(
+                  //       "assets/images/Create_Icon_Assignment.svg",
+                  //       height: _appConfig.rH(13),
+                  //       width: _appConfig.rW(13),
+                  //     ),
+                  //     onTap: (){
+                  //       Navigator.pushNamed(context, "/create_assignment");
+                  //     },
+                  //   ),
+                  //   top: _appConfig.rH(60),
+                  //   right: _appConfig.rW(10),
+                  // ),
                 ],
               ),
               Stack(
@@ -212,7 +268,7 @@ class _AssignmentTeacherMainState extends State<AssignmentTeacherMain>
                         height: _appConfig.rH(13),
                         width: _appConfig.rW(13),
                       ),
-                      onTap: (){
+                      onTap: () {
                         Navigator.pushNamed(context, "/create_assignment");
                       },
                     ),

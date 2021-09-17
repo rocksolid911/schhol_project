@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:phygitalz_project_1/Assignment/Assignment_teacher/models/datajson.dart';
+import 'package:phygitalz_project_1/Assignment/Assignment_teacher/widgets/assignment_type_select.dart';
 import 'package:phygitalz_project_1/config/app_config.dart';
 
 class submtted_card extends StatefulWidget {
@@ -9,6 +11,7 @@ class submtted_card extends StatefulWidget {
 }
 
 class _submtted_cardState extends State<submtted_card> {
+  List<Assignment> homework = SelectTypeAssignment().homeworks;
   AppConfig _appConfig;
   @override
   Widget build(BuildContext context) {
