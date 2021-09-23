@@ -1,14 +1,12 @@
 import 'package:flutter_svg/svg.dart';
-import 'package:phygitalz_project_1/Assignment/Assignment_teacher/models/datajson.dart';
-import 'package:phygitalz_project_1/Assignment/Assignment_teacher/providers/dataprovider.dart';
-import 'package:phygitalz_project_1/Assignment/Assignment_teacher/providers/filterprovider.dart';
-import 'package:phygitalz_project_1/Assignment/Assignment_teacher/providers/recordprovider.dart';
-import 'package:phygitalz_project_1/Assignment/Assignment_teacher/widgets/assignment_type_select.dart';
+
+import 'package:phygitalz_project_1/Assignment/Assignment_teacher/widgets/drafts.dart';
+import 'package:phygitalz_project_1/Assignment/Assignment_teacher/widgets/mywidget.dart';
 import 'package:phygitalz_project_1/Assignment/Assignment_teacher/widgets/pending_assignment_card.dart';
+import 'package:phygitalz_project_1/Assignment/Assignment_teacher/widgets/pendings.dart';
 import 'package:phygitalz_project_1/Common/widgets/bottomnav.dart';
 import 'package:phygitalz_project_1/Common/widgets/drawer.dart';
 import 'package:phygitalz_project_1/config/app_config.dart';
-import 'package:provider/provider.dart';
 
 import '../widgets/student_submitted_card.dart';
 
@@ -37,27 +35,13 @@ class _AssignmentTeacherMainState extends State<AssignmentTeacherMain>
   @override
   Widget build(BuildContext context) {
     _appConfig = AppConfig(context);
-    // return Scaffold(
-    //   appBar: AppBar(title: Text("Assignment"),flexibleSpace: TabBarr(),),
-    //   body: SafeArea(
-    //     child: Container(
-    //       width: MediaQuery.of(context).size.width,
-    //       child:submtted_card()
-    //     ),
-    //   ),
-    // );
-    // DataProvider dataProvider = Provider.of<DataProvider>(context);
-    // FilterProvider filterProvider = Provider.of<FilterProvider>(context);
-    // //List<Assignment> draft = dataProvider.assignmentType("Draft");
-    // List <Assignment> draft = filterProvider.filterassigntype("Draft");
-    List <Assignment> draft = Recordprovider().assignment;
+
     return Scaffold(
       drawer: myDrawer(),
       bottomNavigationBar: mYBottomNav(),
       key: _drawerkey,
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
-
         onPressed: () {
           Navigator.pushNamed(context, "/create_assignment");
         },
@@ -79,12 +63,11 @@ class _AssignmentTeacherMainState extends State<AssignmentTeacherMain>
                 Color(0xFFA40DAB),
                 //8A09B1
                 Color(0xFF8A09B1),
-               // Colors.teal,
+                // Colors.teal,
                 //A40DAB
 
                 //Colors.tealAccent,
                 //D73865
-
               ],
             ),
           ),
@@ -139,7 +122,8 @@ class _AssignmentTeacherMainState extends State<AssignmentTeacherMain>
                     background: SvgPicture.asset(
                   "assets/images/Timetable_Calendar_Card.svg",
                   fit: BoxFit.none,
-                )),
+                ),
+                ),
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.only(
                         bottomLeft: Radius.circular(30),
@@ -160,59 +144,32 @@ class _AssignmentTeacherMainState extends State<AssignmentTeacherMain>
                       borderSide: BorderSide(color: Colors.white),
                       insets: EdgeInsets.only(bottom: 8)),
                   tabs: [
-                    Tab(
-                      child: Column(
-                        children: [
-                          Text(
-                            "${draft.length}",
-                            style: TextStyle(color: Colors.white),
-                          ),
-                          SizedBox(
-                            height: _appConfig.rH(1),
-                          ),
-                          Text(
-                            "Draft",
-                            style: TextStyle(color: Colors.white, fontSize: 10),
-                          ),
-                        ],
-                      ),
+                    // Tab(
+                    //   child: Column(
+                    //     children: [
+                    //       Text(
+                    //         "${draft.length}",
+                    //         style: TextStyle(color: Colors.white),
+                    //       ),
+                    //       SizedBox(
+                    //         height: _appConfig.rH(1),
+                    //       ),
+                    //       Text(
+                    //         "Draft",
+                    //         style: TextStyle(color: Colors.white, fontSize: 10),
+                    //       ),
+                    //     ],
+                    //   ),
+                    // ),
+                    MyWidget(
+                      status: "Draft",
                     ),
-                    Tab(
-                      child: Column(
-                        children: [
-                          Text(
-                            "05",
-                            style: TextStyle(color: Colors.white),
-                          ),
-                          SizedBox(
-                            height: _appConfig.rH(1),
-                          ),
-                          Text(
-                            "Published",
-                            style: TextStyle(fontSize: 10, color: Colors.white),
-                          ),
-                        ],
-                      ),
+                    MyWidget(
+                      status: "Pending",
                     ),
-                    Tab(
-                      //TODO run time error is coming for this coloumn try adding container
-                      //instead of coloumn
-                      child: Column(
-                        children: [
-                          Text(
-                            "06",
-                            style: TextStyle(color: Colors.white),
-                          ),
-                          SizedBox(
-                            height: _appConfig.rH(1),
-                          ),
-                          Text(
-                            "Closed",
-                            style: TextStyle(color: Colors.white, fontSize: 10),
-                          ),
-                        ],
-                      ),
-                    ),
+                    MyWidget(
+                      status: "Published",
+                    )
                   ],
                   controller: controller,
                 ),
@@ -220,63 +177,20 @@ class _AssignmentTeacherMainState extends State<AssignmentTeacherMain>
               // SliverList(
             ];
           },
-          body:  TabBarView(
+          body: TabBarView(
             controller: controller,
             children: <Widget>[
-              Stack(
-                children: [
-                  Column(
-                    children: [
-                      SelectTypeAssignment(),
-                      SizedBox(
-                        height: _appConfig.rH(2.5),
-                      ),
-                      submtted_card(),
-                    ],
-                  ),
-                  // Positioned(
-                  //   child: GestureDetector(
-                  //     child: SvgPicture.asset(
-                  //       "assets/images/Create_Icon_Assignment.svg",
-                  //       height: _appConfig.rH(13),
-                  //       width: _appConfig.rW(13),
-                  //     ),
-                  //     onTap: (){
-                  //       Navigator.pushNamed(context, "/create_assignment");
-                  //     },
-                  //   ),
-                  //   top: _appConfig.rH(60),
-                  //   right: _appConfig.rW(10),
-                  // ),
-                ],
-              ),
-              Stack(
-                children: [
-                  Column(
-                    children: [
-                      SelectTypeAssignment(),
-                      SizedBox(
-                        height: _appConfig.rH(2.5),
-                      ),
-                      PendingCard(),
-                    ],
-                  ),
-                  Positioned(
-                    child: GestureDetector(
-                      child: SvgPicture.asset(
-                        "assets/images/Create_Icon_Assignment.svg",
-                        height: _appConfig.rH(13),
-                        width: _appConfig.rW(13),
-                      ),
-                      onTap: () {
-                        Navigator.pushNamed(context, "/create_assignment");
-                      },
-                    ),
-                    top: _appConfig.rH(60),
-                    right: _appConfig.rW(10),
-                  ),
-                ],
-              ),
+              // Column(
+              //   children: [
+              //     SelectTypeAssignment(),
+              //     SizedBox(
+              //       height: _appConfig.rH(2.5),
+              //     ),
+              //     SubmitCard(),
+              //   ],
+              // ),
+              DraftAssignment(),
+              Pendings(),
               Center(child: Text("Tab three")),
             ],
           ),

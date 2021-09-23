@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:http/http.dart' as http;
+import 'package:http/http.dart' as http ;
 //import 'package:http/http.dart';
 import 'package:phygitalz_project_1/Timetable/Taecher_Timetable/models/timetable_teacher.dart';
 import 'package:phygitalz_project_1/config/api.dart';
@@ -13,6 +13,7 @@ class TeacherTimeTableProvider with ChangeNotifier {
     );
     timetableTeacher = timetableTeacherFromJson(response.body);
     notifyListeners();
+
     return timetableTeacher;
 
   }

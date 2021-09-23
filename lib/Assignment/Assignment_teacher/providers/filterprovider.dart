@@ -11,24 +11,24 @@ class FilterProvider with ChangeNotifier{
   List<Assignment> get homework => _homework;
   List<Assignment> get portfolio => _portfolio;
 
-  Future<void> filterAssignment() async {
-    // List<Assignment> lab = await DataProvider().lab();
-    // _labrecord = lab;
-    // lab.forEach((e) => print(e.s40AssignedDate));
-    // print(lab[0].s40Document[0].documentName);
-
-
-    List<Assignment> hwork = await DataProvider().homework();
-    _homework = hwork;
-    hwork.forEach((e) => print(e.s40AssignedDate));
-    print(hwork[0].s40Document[0].documentName);
-
-    List<Assignment> portfol = await DataProvider().portfolio();
-    _portfolio = portfol;
-    portfol.forEach((e) => print(e.s40AssignedDate));
-    print(portfol[0].s40Document[0].documentName);
-    notifyListeners();
-  }
+  // Future<void> filterAssignment() async {
+  //   // List<Assignment> lab = await DataProvider().lab();
+  //   // _labrecord = lab;
+  //   // lab.forEach((e) => print(e.s40AssignedDate));
+  //   // print(lab[0].s40Document[0].documentName);
+  //
+  //
+  //   List<Assignment> hwork = await DataProvider().homework();
+  //   _homework = hwork;
+  //   hwork.forEach((e) => print(e.s40AssignedDate));
+  //   print(hwork[0].s40Document[0].documentName);
+  //
+  //   List<Assignment> portfol = await DataProvider().portfolio();
+  //   _portfolio = portfol;
+  //   portfol.forEach((e) => print(e.s40AssignedDate));
+  //   print(portfol[0].s40Document[0].documentName);
+  //   notifyListeners();
+  // }
 
   Future<List<Assignment>> filterassigntype(String type) async {
     List<Assignment> lab = await DataProvider().assignmentType(type);

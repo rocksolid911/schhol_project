@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:phygitalz_project_1/Assignment/Assignment_teacher/models/datajson.dart';
+import 'package:phygitalz_project_1/Assignment/Assignment_teacher/providers/dataprovider.dart';
 import 'package:phygitalz_project_1/Assignment/Assignment_teacher/providers/filterprovider.dart';
 
 import 'package:phygitalz_project_1/Leaves/model/assignment_demo.dart';
@@ -57,6 +58,31 @@ class _TryState extends State<Try> {
                   child: const Text('myname', style: TextStyle(fontSize: 12)),
                 ),
               ),
+              // Consumer<DataProvider>(
+              //   builder: (context, provider, child) {
+              //     return FutureBuilder(
+              //         future:DataProvider().assignmentType("Home Work"),
+              //         builder: (context, projectSnap) {
+              //           if (projectSnap.connectionState == ConnectionState.none &&
+              //               projectSnap.hasData == null) {
+              //             //print('project snapshot data is: ${projectSnap.data}');
+              //             return Container();
+              //           }
+              //           return ListView.builder(
+              //             itemCount: projectSnap.data.length,
+              //             itemBuilder: (context, index) {
+              //                 = projectSnap.data[index];
+              //               return Column(
+              //                 children: <Widget>[
+              //                   // Widget to display the list of project
+              //                 ],
+              //               );
+              //             },
+              //           );
+              //         },,
+              //     );
+              //   },
+              // )
             ],
           );
         },

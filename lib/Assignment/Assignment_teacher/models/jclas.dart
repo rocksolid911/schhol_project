@@ -12,7 +12,7 @@ class jclas {
       "S40_Assignment_Details":"Submit an assignment on Gravity before due date",
       "S40_Assigned_Date":"2021-03-29",
       "S40_Due_Date":"2021-03-31",
-      "S40_Assignment_Status":"Draft",
+      "S40_Assignment_Status":"Pending",
       "S40_Created_By":"Mr.Manu Mohan",
       "S40_Document":[
         {"Document_Base64":"","Document_Name":"lab-1","Document_Format":""}
@@ -72,7 +72,7 @@ class jclas {
         "S40_Assignment_Details":"Explore on the evolution of Modern Computer and submit the analysis of the same before the due date.",
         "S40_Assigned_Date":"2021-04-19",
         "S40_Due_Date":"2021-04-31",
-        "S40_Assignment_Status":"Draft",
+        "S40_Assignment_Status":"Pending",
         "S40_Created_By":"Ms.Anna Joy",
         "S40_Document":[
           {"Document_Base64":"","Document_Name":"hwork-1","Document_Format":""}
@@ -169,7 +169,7 @@ class jclas {
         "S40_Assignment_Details":"Explain the description of Human Mind by Aristotle and comment your views on the same.",
         "S40_Assigned_Date":"2021-02-12",
         "S40_Due_Date":"2021-02-15",
-        "S40_Assignment_Status":"Draft",
+        "S40_Assignment_Status":"Pending",
         "S40_Created_By":"Mr.Ashwin M",
         "S40_Document":[
           {"Document_Base64":"","Document_Name":"hwork-4","Document_Format":""}
@@ -289,7 +289,7 @@ class jclas {
         "S40_Assignment_Details":"Review the feedback and meet the tutor.",
         "S40_Assigned_Date":"2021-03-29",
         "S40_Due_Date":"2021-03-31",
-        "S40_Assignment_Status":"Submitted",
+        "S40_Assignment_Status":"Published",
         "S40_Created_By":"Mr.Tony K",
         "S40_Document":[
           {"Document_Base64":"","Document_Name":"port-5","Document_Format":""}
@@ -309,7 +309,7 @@ class jclas {
         "S40_Assignment_Details":"Meet the Teacher.",
         "S40_Assigned_Date":"2021-03-29",
         "S40_Due_Date":"2021-03-31",
-        "S40_Assignment_Status":"Closed",
+        "S40_Assignment_Status":"Pending",
         "S40_Created_By":"Mr.Many Baby",
         "S40_Document":[
           {"Document_Base64":"","Document_Name":"hwork-8","Document_Format":""}
@@ -329,7 +329,7 @@ class jclas {
         "S40_Assignment_Details":"Contact your teacher.",
         "S40_Assigned_Date":"2021-03-29",
         "S40_Due_Date":"2021-03-31",
-        "S40_Assignment_Status":"Closed",
+        "S40_Assignment_Status":"Published",
         "S40_Created_By":"Mr.Manu Mohan",
         "S40_Document":[
           {"Document_Base64":"","Document_Name":"lab-4","Document_Format":""}

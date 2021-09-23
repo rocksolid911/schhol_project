@@ -142,6 +142,7 @@ class myDrawer extends StatelessWidget {
         title: Text('Assessment'),
         onTap: () {
           Navigator.pop(context);
+          Navigator.pushNamed(context, "/assmain");
         },
       ),
       ListTile(
