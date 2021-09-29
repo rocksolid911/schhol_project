@@ -40,8 +40,7 @@ startTimer();
 
   @override
   void dispose() {
-    //Timer.dispose();
-    // startTimer();
+
     super.dispose();
   }
 

@@ -20,9 +20,7 @@ class _ConductedViewState extends State<ConductedView> {
       body: Container(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
-        child: Column(
-          children: [button(), SizedBox(height: 20,),ConductedCard()],
-        ),
+        child: ConductedCard(),
       ),
     );
   }

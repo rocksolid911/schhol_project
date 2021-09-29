@@ -76,7 +76,7 @@ late AppConfig _appConfig;
                   )
                 : BoxDecoration(
                     gradient: LinearGradient(
-                      colors: [Colors.green, Colors.white],
+                      colors: [Colors.white, Colors.white],
                       begin: Alignment.bottomLeft,
                       end: Alignment.topRight,
                     ),

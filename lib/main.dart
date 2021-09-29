@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 import 'package:path_provider/path_provider.dart' as pathProvider;
+import 'package:phygitalz_project_1/Assessment/Teacher/providers/evedataprovider.dart';
 import 'package:phygitalz_project_1/Assignment/Assignment_teacher/providers/dataprovider.dart';
 import 'package:phygitalz_project_1/Assignment/Assignment_teacher/providers/filterprovider.dart';
 
@@ -62,6 +63,9 @@ class _MyAppState extends State<MyApp> {
         ),
         ChangeNotifierProvider(
           create: (context) => DataProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => EveDataProvider(),
         ),
       ],
       child: MaterialApp(
