@@ -10,6 +10,7 @@ import 'package:phygitalz_project_1/Assessment/Teacher/widgets/conducted.dart';
 import 'package:phygitalz_project_1/Assessment/Teacher/widgets/draft_cards.dart';
 import 'package:phygitalz_project_1/Assessment/Teacher/widgets/evaluated_card.dart';
 import 'package:phygitalz_project_1/Assessment/Teacher/widgets/rejected_cards.dart';
+import 'package:phygitalz_project_1/Assessment/Teacher/widgets/roundedtaball.dart';
 import 'package:phygitalz_project_1/Assessment/Teacher/widgets/submitted_cards.dart';
 import 'package:phygitalz_project_1/Assignment/Assignment_teacher/widgets/student_submitted_card.dart';
 import 'package:phygitalz_project_1/Common/widgets/bottomnav.dart';
@@ -24,11 +25,11 @@ class AssTeacher extends StatefulWidget {
 
 class _AssTeacherState extends State<AssTeacher>
     with SingleTickerProviderStateMixin {
-  bool Classs = false;
+  bool Classs = true;
   bool Periodic = false;
   bool Summative = false;
 
-  bool term1 = false;
+  bool term1 = true;
   bool term2 = false;
   bool term3 = false;
   TabController controller;
@@ -120,17 +121,6 @@ class _AssTeacherState extends State<AssTeacher>
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            // CustomButton(
-                            //   bdrRadius: 25,
-                            //   text: "Class",
-                            //   startcolor: 0xFFD64575,
-                            //   midcolor: 0xFFD64570,
-                            //   endcolor: 0xFF8522A3,
-                            //   onTap: (){},
-                            //   selected: true,
-                            //   activecolor: Colors.white,
-                            //   inactivecolor: Color(0xFFD64570),
-                            // ),
                             CustomAnimatedButton(
                                 text: "Class",
                                 selected: Classs,
@@ -199,17 +189,6 @@ class _AssTeacherState extends State<AssTeacher>
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              // CustomButton(
-                              //   bdrRadius: 25,
-                              //   text: "Class",
-                              //   startcolor: 0xFFD64575,
-                              //   midcolor: 0xFFD64570,
-                              //   endcolor: 0xFF8522A3,
-                              //   onTap: (){},
-                              //   selected: true,
-                              //   activecolor: Colors.white,
-                              //   inactivecolor: Color(0xFFD64570),
-                              // ),
                               CustomAnimatedButton(
                                 text: "Term 1",
                                 selected: term1,
@@ -287,29 +266,8 @@ class _AssTeacherState extends State<AssTeacher>
                         isScrollable: true,
                         indicatorColor: Colors.purple,
                         tabs: [
-                          Container(
-                            height: 70.0,
-                            child: new Tab(
-                              //text: 'hello'
-                              child: Column(
-                                children: [
-                                  CircleAvatar(
-                                    radius: 20,
-                                    child: Text("03"),
-                                  ),
-                                  SizedBox(
-                                    // height: _appConfig.rH(1),
-                                    height: 8,
-                                  ),
-                                  Text(
-                                    "Draft",
-                                    style: TextStyle(
-                                        color: Colors.black, fontSize: 14),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
+                         RoundedTabAll(type: "Periodic",term: "Term 1",),
+
                           Container(
                             height: 70.0,
                             child: new Tab(
@@ -460,179 +418,14 @@ class _AssTeacherState extends State<AssTeacher>
           ),
         ),
       ),
-          // SliverAppBar(
-          //   leading: GestureDetector(
-          //     child: Icon(
-          //       Icons.sort,
-          //       color: Colors.white,
-          //     ),
-          //     onTap: () {
-          //       _drawerkey.currentState.openDrawer();
-          //     },
-          //   ),
-          //   actions: [
-          //     Padding(
-          //       padding: EdgeInsets.only(right: _appConfig.rWP(4)),
-          //       child: Icon(
-          //         Icons.search,
-          //         color: Colors.white,
-          //       ),
-          //     ),
-          //   ],
-          //   toolbarHeight: 50,
-          //   title: Text("Assignment"),
-          //   pinned: true,
-          //   snap: true,
-          //   floating: true,
-          //   //elevation: 15,
-          //   backgroundColor: Colors.pinkAccent,
-          //   flexibleSpace: FlexibleSpaceBar(
-          //
-          //     background: SvgPicture.asset(
-          //       "assets/images/Timetable_Calendar_Card.svg",
-          //       fit: BoxFit.none,
-          //     ),
-          //   ),
-          //   shape: RoundedRectangleBorder(
-          //       borderRadius: BorderRadius.only(
-          //           bottomLeft: Radius.circular(30),
-          //           bottomRight: Radius.circular(30))),
-          //   collapsedHeight: 50,
-          //   expandedHeight: 160.0,
-          //   // expandedHeight: 220.0,
-          //   // **Is it intended ?** flexibleSpace.title overlaps with tabs title.
-          //   // flexibleSpace: FlexibleSpaceBar(
-          //   //   title: Text("FlexibleSpace title"),
-          //   // ),
-          //   bottom: TabBar(
-          //     isScrollable: true,
-          //     indicatorSize: TabBarIndicatorSize.label,
-          //     indicatorWeight: 4,
-          //     labelPadding: EdgeInsets.only(bottom: 8,left: 25,right: 10),
-          //     indicator: UnderlineTabIndicator(
-          //         borderSide: BorderSide(color: Colors.white),
-          //         insets: EdgeInsets.only(bottom: 8,left: 4)),
-          //     tabs: [
-          //       Tab(
-          //         child: Column(
-          //           children: [
-          //             Text(
-          //               "03",
-          //               style: TextStyle(color: Colors.white,fontSize: 18),
-          //             ),
-          //
-          //             Text(
-          //               "Draft",
-          //               style: TextStyle(color: Colors.white, fontSize: 14),
-          //             ),
-          //           ],
-          //         ),
-          //         // text: "3",
-          //         // child: Text("Draft"),
-          //       ),
-          //
-          //       Tab(
-          //         child: Column(
-          //           children: [
-          //             Text(
-          //               "12",
-          //               style: TextStyle(color: Colors.white,fontSize: 18),
-          //             ),
-          //
-          //             Text(
-          //               "Submitted",
-          //               style: TextStyle(color: Colors.white, fontSize: 14),
-          //             ),
-          //           ],
-          //         ),
-          //       ),
-          //       Tab(
-          //         child: Column(
-          //           children: [
-          //             Text(
-          //               "08",
-          //               style: TextStyle(color: Colors.white,fontSize: 18),
-          //             ),
-          //
-          //             Text(
-          //               "Approved",
-          //               style: TextStyle(color: Colors.white, fontSize: 14),
-          //             ),
-          //           ],
-          //         ),
-          //       ),
-          //       Tab(
-          //         child: Column(
-          //           children: [
-          //             Text(
-          //               "07",
-          //               style: TextStyle(color: Colors.white,fontSize: 18),
-          //             ),
-          //
-          //             Text(
-          //               "Rejected",
-          //               style: TextStyle(color: Colors.white, fontSize: 14),
-          //             ),
-          //           ],
-          //         ),
-          //       ),
-          //       Tab(
-          //         child: Column(
-          //           children: [
-          //             Text(
-          //               "11",
-          //               style: TextStyle(color: Colors.white,fontSize: 18),
-          //             ),
-          //
-          //             Text(
-          //               "Scheduled",
-          //               style: TextStyle(color: Colors.white, fontSize: 14),
-          //             ),
-          //           ],
-          //         ),
-          //       ),
-          //       Tab(
-          //         child: Column(
-          //           children: [
-          //             Text(
-          //               "05",
-          //               style: TextStyle(color: Colors.white,fontSize: 18),
-          //             ),
-          //
-          //             Text(
-          //               "Conducted",
-          //               style: TextStyle(color: Colors.white, fontSize: 14),
-          //             ),
-          //           ],
-          //         ),
-          //       ),
-          //       Tab(
-          //         child: Column(
-          //           children: [
-          //             Text(
-          //               "07",
-          //               style: TextStyle(color: Colors.white,fontSize: 18),
-          //             ),
-          //
-          //             Text(
-          //               "Evaluated",
-          //               style: TextStyle(color: Colors.white, fontSize: 14),
-          //             ),
-          //           ],
-          //         ),
-          //       ),
-          //     ],
-          //     controller: controller,
-          //
-          //   ),
-          // ),
-          // SliverList(
+        
 
       body: TabBarView(
         controller: controller,
         children: <Widget>[
           //Center(child: Text("Tab one")),
-          Draftcard(),
+          //Draftcard(),
+          chooseTab(),
           //Center(child: Text("Tab two")),
           SubmittedCard(),
           //Center(child: Text("Tab three")),
@@ -650,4 +443,28 @@ class _AssTeacherState extends State<AssTeacher>
       ),
     );
   }
+  chooseTab(){
+    if(Classs&&term1){
+      return Draftcard(type: "Class",term: "Term 1",);
+    }else if(Classs&&term2){
+      return Draftcard(type: "Class",term: "Term 2",);
+    }else if(Classs&&term3){
+      return Draftcard(type: "Class",term: "Term 3",);
+    }else if(Periodic&&term1){
+      return Draftcard(type: "Periodic",term: "Term 1",);
+    }else if(Periodic&&term2){
+      return Draftcard(type: "Periodic",term: "Term 2",);
+    }else if(Periodic&&term3){
+      return Draftcard(type: "Periodic",term: "Term 3",);
+    }else if(Summative&&term1){
+      return Draftcard(type: "Summative",term: "Term 1",);
+    }else if(Summative&&term2){
+      return Draftcard(type: "Summative",term: "Term 2",);
+    }else
+      return Draftcard(type: "Summative",term: "Term 3",);
+
+  }
+  String chsbyType(){}
 }
+
+

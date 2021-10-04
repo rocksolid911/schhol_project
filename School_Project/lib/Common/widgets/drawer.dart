@@ -94,7 +94,7 @@ class myDrawer extends StatelessWidget {
         title: Text('Leaves'),
         onTap: () {
           Navigator.pop(context);
-          Navigator.pushNamed(context, '/try');
+          Navigator.pushNamed(context, '/test');
         },
       ),
       ListTile(
